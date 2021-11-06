@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 
-const header: FC = () => {
+const Header: FC = () => {
   return (
     <>
     </>
   )
 }
 
-export default header
+export default Header

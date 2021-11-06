@@ -6,12 +6,12 @@ const PageWrapper = styled.div`
   padding: 20px;
 `
 
-const UserPage: NextPage = () => {
+const BookPage: NextPage = () => {
   return (
     <>
       <PageWrapper>
-      <h2>
-          User
+        <h2>
+          Book
         </h2>
         <Link href="/">
           To Home
@@ -21,4 +21,4 @@ const UserPage: NextPage = () => {
   )
 }
 
-export default UserPage
+export default BookPage
