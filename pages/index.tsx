@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import styled from 'styled-components'
-import mixin from '../styles/modules.scss'
 
 const id = 1
 
@@ -24,8 +23,8 @@ const Home: NextPage = () => {
           </Link>
         </Wrapper> 
         <Wrapper>
-        <Link href={`/book/${id}`}>
-            To Book
+        <Link href={`/finance/${id}`}>
+            To Finance
           </Link>
         </Wrapper>
       </Wrapper> 

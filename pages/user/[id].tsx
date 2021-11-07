@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { ChangeEvent, useState } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
-import { SingleTextInput } from '../../components/atoms/SingleTextInput'
+import { SingleTextInput } from '../../components/atoms/input'
 
 const PageWrapper = styled.div`
   padding: 20px;
