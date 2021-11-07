@@ -10,7 +10,7 @@ const Input = styled.input`
   padding: 10px;
 `
 
-export const SingleTextInput = (props: Props) => {
+export const TextInput = (props: Props) => {
   return (
     <>
     <Input
