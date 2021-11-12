@@ -21,6 +21,10 @@ const BookPage: NextPage = () => {
         <Link href="/">
           To Home
         </Link>
+        <Wrapper>
+          <Button
+          text="Hoverテスト" />
+        </Wrapper>
       </PageWrapper>
     </>
   )

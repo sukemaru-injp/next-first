@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import { hover } from '../../styles/mixin'
 
 interface Props {
   text: string
-  onClick: () => void
+  onClick?: () => void
 }
 
 const Button = (props: Props) => {
@@ -11,10 +12,10 @@ const Button = (props: Props) => {
     padding: 10px;
     color: #000;
     background-color: #008b8b;
-
-    &:hover {
-      cursor: pointer;
-    }
+    ${hover(`
+    cursor: pointer;
+    background-color: orange;
+    `)}
   `
   return (
     <>
