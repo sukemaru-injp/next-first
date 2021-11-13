@@ -8,3 +8,9 @@ export const hover = (content: string) => {
   `
   return hoverCss
 }
+
+export const mediaQuery = (content: string) => {
+  const mediaQueryCss = css `
+  @media 
+  `
+}
