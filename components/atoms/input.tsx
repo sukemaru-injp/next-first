@@ -1,4 +1,4 @@
-import React from 'react'
+import { ChangeEvent, FC } from 'react'
 import styled from 'styled-components'
 
 interface Props {
@@ -10,7 +10,7 @@ const Input = styled.input`
   padding: 10px;
 `
 
-export const TextInput = (props: Props) => {
+export const TextInput: FC<Props> = (props: Props) => {
   return (
     <>
     <Input

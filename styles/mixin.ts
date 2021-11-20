@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import styled, { css, Interpolation } from 'styled-components'
 
 export const hover = (content: string) => {
   const hoverCss = css`
@@ -9,8 +9,36 @@ export const hover = (content: string) => {
   return hoverCss
 }
 
-export const mediaQuery = (content: string) => {
+interface Point {
+  point: string
+}
+
+export const mediaQuery = (point: string, content: string) => {
+  let mediaQueryPoint
+  switch (point) {
+    case 'default':
+      mediaQueryPoint =  'screen and (max-width: 1024px)'
+      break
+    case 'mobile':
+      mediaQueryPoint = 'screen and (max-width: 1024px)'
+      break
+    case 'tabletOnly':
+      mediaQueryPoint = 'screen and (max-width: 1024px) and (min-width:600px)'
+      break
+    case 'spOnly':
+      mediaQueryPoint = 'screen and (max-width : 599px)'
+      break
+    case 'spSmallOnly':
+      mediaQueryPoint = 'screen and (max-width : 350px)'
+      break
+    case 'pcOnly': 
+      mediaQueryPoint = 'screen and (min-width : 1025px)'
+      break
+  }
   const mediaQueryCss = css `
-  @media 
+  @media ${mediaQueryPoint} {
+    ${content}
+  }
   `
+  return mediaQueryCss
 }

@@ -29,7 +29,8 @@ const BookPage: NextPage = () => {
         <Link href="/">
           To Home
         </Link>
-        <LifeCycle>
+        <LifeCycle
+          onEffect={increment}>
         <p>{count}</p>
         <Button
           text="Hoverテスト"
