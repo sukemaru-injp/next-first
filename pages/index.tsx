@@ -1,30 +1,21 @@
 import type { NextPage } from 'next'
-import Link from 'next/link'
 import styled from 'styled-components'
+import Image from 'next/image'
 
-const id = 1
-
-const Wrapper = styled.div` 
-  padding: 20px;
-`
-
-const LinkWrapper = styled.div`
-  padding: 10px;
+const Wrapper = styled.div`
+display: flex;
 `
 
 const Home: NextPage = () => {
   return (
     <>
       <Wrapper>
-        <Wrapper>
-          <Link
-            href={`/user/${id}`}>
-            To User
-          </Link>
-        </Wrapper> 
-        <Wrapper>
-        </Wrapper>
-      </Wrapper> 
+        <Image
+          src="/../public/img/profile.png"
+          alt="profile"
+          width={600}
+          height={500} />
+      </Wrapper>
     </>
   )
 }

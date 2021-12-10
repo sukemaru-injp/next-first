@@ -1,20 +1,11 @@
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 import styled from 'styled-components'
+import { color } from '../../styles/constants'
 
 interface Props {
-  title: string
-  onClick?: () => void
+  children: ReactNode
+  bg?: string
 }
-
-const HeaderWrapper = styled.header`
-  width: 100%;
-  height: 80px;
-  background-color: salmon;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-`
 
 const Title = styled.h1`
   color: #fff;
@@ -24,16 +15,19 @@ const Title = styled.h1`
   }
 `
 
-const Header = (props: Props) => {
+const HeaderWrapper = styled.header<Props>`
+width: 100%;
+height: 70px;
+background-color: ${({ bg }) => bg || color.main};
+padding: 0 20px;
+`
+
+export const Header: FC<Props> = (props: Props) => {
   return (
     <>
       <HeaderWrapper>
-        <Title onClick={props.onClick}>
-          {props.title}
-        </Title>
+        {props.children}
       </HeaderWrapper>
     </>
   )
 }
-
-export default Header
