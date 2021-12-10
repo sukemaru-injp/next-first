@@ -1,3 +1,27 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    // 空改行は1行まで
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    // シングルクオート
+    "quotes": ["error", "single"],
+    // var禁止
+    "no-var": ["error"],
+    // 無駄なスペース削除
+    "no-multi-spaces": ["error"],
+    // jsのインデントは２
+    "indent": ["error", 2],
+    // セミコロン禁止
+    "semi": ["error", "never"],
+    // 関数の前にスペース
+    "arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "object-curly-spacing": ["error", "always"],
+    "no-console": ["warn", {"allow": ["warn"] }]
+  }
 }

@@ -13,17 +13,17 @@ const InnerWrapper = styled.div`
 `
 
 const UserPage: NextPage = () => {
-    const [text, setText] = useState<string>('')
+  const [text, setText] = useState<string>('')
   
-    const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
-      console.log(event)
-      setText(event.target.value)
-    }
+  const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
+    console.log(event)
+    setText(event.target.value)
+  }
   
   return (
     <>
       <PageWrapper>
-      <h2>
+        <h2>
           User
         </h2>
         <Link href="/">

@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   background-color: #ddd;
 `
 
-export const LifeCycle: FC<Props> = ({children, onEffect}) => {
+export const LifeCycle: FC<Props> = ({ children, onEffect }) => {
   const Effect = () => {
     useEffect(() => {
       console.log('test')

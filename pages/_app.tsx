@@ -6,20 +6,20 @@ import Header from '../components/atoms/header'
 const AllHead = () => {
   return (
     <Head>
-    <title>NextFirst</title>
-    <link rel="icon" href="/favicon.ico" />
-  </Head>
+      <title>NextFirst</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
   )
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-    <AllHead />
-    <Header 
-      title="NextBooks"
-      onClick={() => window.location.href = '/'}/>
-    <Component {...pageProps} />
+      <AllHead />
+      <Header 
+        title="NextBooks"
+        onClick={() => window.location.href = '/'}/>
+      <Component {...pageProps} />
     </>
   )
 }

@@ -13,10 +13,10 @@ const Input = styled.input`
 export const TextInput: FC<Props> = (props: Props) => {
   return (
     <>
-    <Input
-      value={props.value}
-      onChange={props.onChange}>
-    </Input>
+      <Input
+        value={props.value}
+        onChange={props.onChange}>
+      </Input>
     </>
   )
 }
