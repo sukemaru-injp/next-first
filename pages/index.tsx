@@ -23,9 +23,6 @@ const Home: NextPage = () => {
           </Link>
         </Wrapper> 
         <Wrapper>
-        <Link href={`/finance/${id}`}>
-            To Finance
-          </Link>
         </Wrapper>
       </Wrapper> 
     </>
