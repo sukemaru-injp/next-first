@@ -5,7 +5,7 @@ import { FC } from 'react'
 const buttonUi = [
   {
     title: 'Profile',
-    to: '/'
+    to: '/profile'
   },
   {
     title: 'Skill',

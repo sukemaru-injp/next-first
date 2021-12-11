@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import Button from '../atoms/button'
+import { Button, SelectButton } from '../atoms/button'
 import { map } from 'lodash'
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
 import { FC } from 'react'
 
 type ui = {
@@ -20,14 +20,24 @@ justify-content: center;
 `
 
 const Buttons: FC<Props> = (props: Props) => {
+  const router = useRouter()
+  console.log(router.pathname)
   return (
     <>
       <InnerWrapper>
         {map(props.ui, (v: ui, idx) => {
-          return <Button
-            key={`button-${idx}`}
-            title={v.title}
-            onClick={() => Router.push(`${v.to}`)} />
+          if (router.pathname.includes(v.to)) {
+            return <SelectButton
+              key={`button-${idx}`}
+              title={v.title}
+              onClick={() => Router.push(`${v.to}`)} />
+          } else {
+            return <Button
+              key={`button-${idx}`}
+              title={v.title}
+              onClick={() => Router.push(`${v.to}`)} />
+          }
+          
         }
         )}
       </InnerWrapper>

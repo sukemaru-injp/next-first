@@ -15,6 +15,7 @@ width: 100px;
 border-radius: 5px;
 border: none;
 background-color: ${color.main};
+transition: all 0.3s;
 &:focus {
 outline: none;
 }
@@ -24,7 +25,21 @@ background-color: ${color.sub};
 `)}
 `
 
-const Button: FC<Props> = (props: Props) => {
+const SelectButtonStyle = styled(ButtonStyle)`
+background-color: ${color.sub};
+color: ${color.main}
+`
+
+export const SelectButton: FC<Props> = (props: Props) => {
+  return (
+    <SelectButtonStyle
+      onClick={props.onClick}>
+      <h3>{props.title}</h3>
+    </SelectButtonStyle>
+  )
+}
+
+export const Button: FC<Props> = (props: Props) => {
   return (
     <ButtonStyle
       onClick={props.onClick}>
