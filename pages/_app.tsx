@@ -14,11 +14,6 @@ const AllHead = () => {
     </Head>
   )
 }
-const Title = styled.h1`
-color: #fff;
-`
-const InnerWrapper = styled.div`
-`
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
