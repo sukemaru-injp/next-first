@@ -10,6 +10,11 @@
  *::after {
    box-sizing: border-box;
  }
+
+ * {
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
+ }
  
  html {
    font-family: sans-serif;

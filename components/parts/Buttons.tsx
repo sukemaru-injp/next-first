@@ -21,7 +21,6 @@ justify-content: center;
 
 const Buttons: FC<Props> = (props: Props) => {
   const router = useRouter()
-  console.log(router.pathname)
   return (
     <>
       <InnerWrapper>

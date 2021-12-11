@@ -10,6 +10,7 @@ const AllHead = () => {
     <Head>
       <title>sukemaru-page</title>
       <link rel="icon" href="/favicon.ico" />
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Raleway&display=swap" rel="stylesheet" />
     </Head>
   )
 }
