@@ -11,7 +11,7 @@ const Home: NextPage = () => {
     <>
       <Wrapper>
         <Image
-          src="/../public/img/profile.png"
+          src="/img/profile.png"
           alt="profile"
           width={600}
           height={500} />

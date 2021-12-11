@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import PageWrapper from '../components/atoms/PageWrapper'
 import styled from 'styled-components'
-import { Header } from '../components/atoms/header'
+import MainHeader from '../components/templates/MainHeader'
 
 const AllHead = () => {
   return (
@@ -16,16 +16,14 @@ const AllHead = () => {
 const Title = styled.h1`
 color: #fff;
 `
+const InnerWrapper = styled.div`
+`
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <AllHead />
-      <Header>
-        <Title>
-        SukemaruProfile
-        </Title>
-      </Header>
+      <MainHeader />
       <PageWrapper>
         <Component {...pageProps} />
       </PageWrapper>
