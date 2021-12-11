@@ -5,7 +5,7 @@ import CardWithTitle from '../../components/parts/CardWithTitle'
 const PageWrapper = styled.div`
 padding: 10px;
 display: flex;
-justify-content: center;
+align-items: center;
 flex-flow: column;
 `
 
