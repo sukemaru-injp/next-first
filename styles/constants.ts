@@ -3,5 +3,6 @@ export const color = {
   sub: '#ffaa00',
   error: '#ff2b00',
   defaultBg: '#ffffe0',
-  text: '#fff'
+  text: '#fff',
+  subText: '#808080'
 }
