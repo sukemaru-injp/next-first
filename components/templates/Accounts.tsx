@@ -29,6 +29,9 @@ const Accounts = () => {
   const toGithub = () => {
     window.open('https://github.com/sukemaru-injp', '_blank')
   }
+  const toFacebook = () => {
+    window.open('https://www.facebook.com/profile.php?id=100029782609298', '_blank')
+  }
   return (
     <>
       <Wrapper>
@@ -37,7 +40,8 @@ const Accounts = () => {
           onClick={toGithub}>
           <SubTitle>Github</SubTitle><GitHubIcon />
         </IconWrapper>
-        <IconWrapper>
+        <IconWrapper
+          onClick={toFacebook}>
           <SubTitle>FaceBook</SubTitle><FacebookIcon />
         </IconWrapper>
       </Wrapper>
