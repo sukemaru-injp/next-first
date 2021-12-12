@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { contextInner } from '../src/ui'
+import Accounts from '../components/templates/Accounts'
 
 const Wrapper = styled.div`
 display: flex;
@@ -59,6 +60,7 @@ const Home: NextPage = () => {
           {contextInner.map((item, idx) => 
             <Sentence key={`context${idx}`}>{item}</Sentence>
           )}
+          <Accounts />
         </ContentWrapper>
       </Wrapper>
     </>

@@ -15,7 +15,7 @@ font-size: 1.1rem;
 padding: 5px 10px;
 `
 
-const skillInner = [
+const skillInner: Skill[] = [
   {
     title: 'CSS',
     sentence: ['コンポーネント志向なCSS設計を意識しています。', 'SCSSやCSSinJSでの記述に精通。']
