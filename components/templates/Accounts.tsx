@@ -26,11 +26,15 @@ padding: 0 5px 0 0;
 `
 
 const Accounts = () => {
+  const toGithub = () => {
+    window.open('https://github.com/sukemaru-injp', '_blank')
+  }
   return (
     <>
       <Wrapper>
         <Title>Get&ensp;in&ensp;Touch</Title>
-        <IconWrapper>
+        <IconWrapper
+          onClick={toGithub}>
           <SubTitle>Github</SubTitle><GitHubIcon />
         </IconWrapper>
         <IconWrapper>
