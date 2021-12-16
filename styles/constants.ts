@@ -4,5 +4,6 @@ export const color = {
   error: '#ff2b00',
   defaultBg: '#ffffe0',
   text: '#fff',
-  subText: '#808080'
+  subText: '#808080',
+  cardHeader: '#8fbc8f'
 }

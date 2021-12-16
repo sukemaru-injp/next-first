@@ -6,14 +6,16 @@ interface Props {
   children: ReactNode
 }
 
-const CardStyle = styled.div`
+const CardStyle = styled.div<Props>`
 box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
 background-color: #fff;
-padding: 20px;
 width: 650px;
 `
+const LargeCardStyle = styled(CardStyle)`
+width: 800px;
+`
 
-const Card: FC<Props> = ({ children }: Props) => {
+export const Card: FC<Props> = ({ children }: Props) => {
   return (
     <CardStyle>
       {children}
@@ -21,4 +23,10 @@ const Card: FC<Props> = ({ children }: Props) => {
   )
 }
 
-export default Card
+export const LargeCard: FC<Props> = ({ children }: Props) => {
+  return (
+    <LargeCardStyle>
+      {children}
+    </LargeCardStyle>
+  )
+}

@@ -4,6 +4,7 @@ import { color } from '../../styles/constants'
 
 const PageWrapper = styled.div`
 width: 100%;
+min-height: 100vh;
 background-color: ${color.defaultBg};
 `
 interface Props {
