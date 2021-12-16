@@ -34,4 +34,3 @@ export const skillInner: Skill[] = [
     sentence: ['チーム開発でのソースコードの管理。']
   }
 ]
-
