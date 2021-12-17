@@ -10,6 +10,8 @@ interface Props {
   content: string[]
   link?: string
   date?: string
+  imageHeight?: string
+  imageWidth?: string
 }
 
 const Content = styled.p`
@@ -34,6 +36,13 @@ padding: 10px 20px;
 `
 
 const WorkCard: FC<Props> = (props: Props) => {
+  const DateText = () => {
+    if (props?.date) {
+      return <Content>{props.date}〜</Content>
+    } else {
+      return <></>
+    }
+  } 
   return (
     <>
       <CardWithHeader
@@ -43,11 +52,12 @@ const WorkCard: FC<Props> = (props: Props) => {
             <Image
               src={`${props.image}`}
               alt="profile"
-              width={480}
-              height={350}
+              width={props?.imageWidth || 480 }
+              height={props?.imageHeight || 350}
               objectFit="cover" />              
           </ImageWrapper>
           <ContentWrapper>
+            <DateText />
             {map(props.content, (v, idx) => {
               return <Content key={`content${idx}`}>{v}</Content>
             })}

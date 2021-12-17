@@ -17,8 +17,8 @@ const workUi: workUi[] = [
     title: '叡知オフィスクラウド',
     image: '/img/eichi.png',
     link: 'https://eichiii.com/office/',
-    date: format(new Date(2021, 7, 1), 'yyyy/MM/dd'),
-    content: ['叡知オフィスクラウドというBtoBサービスでチャットボットの開発、', 'ユーザー画面開発、社内システムの開発に従事しました。', '主にフロントエンドエンジニアとして、Nuxt.jsを用いて開発していました。', '新規機能開発や新規のサービスの企画や設計から携わり、コンポーネント設計から開発・テスト・運用までをおこなってきました。']
+    date: format(new Date(2021, 6, 1), 'yyyy/MM/dd'),
+    content: ['叡知オフィスクラウドというBtoBサービスでチャットボットの開発、ユーザー画面開発、社内システムの開発に従事しました。', '主にフロントエンドエンジニアとして、Nuxt.jsを用いて開発していました。', '新規機能開発や新規のサービスの企画や使用決定・設計から携わり、コンポーネント設計から開発・テスト・運用まで行ってきました。']
   }
 ]
 
@@ -41,7 +41,8 @@ const Works: NextPage = () => {
             <WorkCard
               title={item.title}
               image={item.image}
-              content={item.content} />
+              content={item.content}
+              date={item?.date || ''} />
           </CardWrapper> 
         })}
       </PageWrapper>
