@@ -38,7 +38,7 @@ padding: 10px 20px;
 const WorkCard: FC<Props> = (props: Props) => {
   const DateText = () => {
     if (props?.date) {
-      return <Content>{props.date}〜</Content>
+      return <Content>{props.date}&ensp;〜</Content>
     } else {
       return <></>
     }
