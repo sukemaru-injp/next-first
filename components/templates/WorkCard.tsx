@@ -8,6 +8,8 @@ interface Props {
   image: string
   title: string
   content: string[]
+  link?: string
+  date?: string
 }
 
 const Content = styled.p`
