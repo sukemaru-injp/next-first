@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import WorkCard from '../../components/templates/WorkCard'
 import type { NextPage } from 'next'
 import { map } from 'lodash'
+import { format } from 'date-fns'
 
 interface workUi {
   title: string
@@ -15,6 +16,8 @@ const workUi: workUi[] = [
   {
     title: '叡知オフィスクラウド',
     image: '/img/eichi.png',
+    link: 'https://eichiii.com/office/',
+    date: format(new Date(2021, 7, 1), 'yyyy/MM/dd'),
     content: ['叡知オフィスクラウドというBtoBサービスでチャットボットの開発、', 'ユーザー画面開発、社内システムの開発に従事しました。', '主にフロントエンドエンジニアとして、Nuxt.jsを用いて開発していました。', '新規機能開発や新規のサービスの企画や設計から携わり、コンポーネント設計から開発・テスト・運用までをおこなってきました。']
   }
 ]

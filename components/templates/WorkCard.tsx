@@ -30,7 +30,7 @@ align-items: center;
 padding: 20px;
 `
 const ContentWrapper = styled.div`
-padding: 10px;
+padding: 10px 20px;
 `
 
 const WorkCard: FC<Props> = (props: Props) => {
