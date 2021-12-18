@@ -3,12 +3,18 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import { contextInner } from '../../src/ui'
 import Accounts from '../../components/templates/Accounts'
+import { mediaQuery } from '../../styles/mixin'
+import { color } from '../../styles/constants' 
 
 const Wrapper = styled.div`
 display: flex;
 align-items: center;
 justify-content: space-around;
 height: 100vh;
+
+${mediaQuery('mobile', `
+flex-flow: column
+`)}
 `
 
 const Sentence = styled.p`
@@ -19,6 +25,12 @@ font-size: 1.2rem;
 const ContentWrapper = styled.div`
 width: 50vw;
 padding: 10px;
+background-color: ${color.defaultBg};
+
+${mediaQuery('mobile', `
+width: 100vw;
+padding: 20px;
+`)}
 `
 const ImageWrapper = styled.div`
 position: relative;
@@ -35,9 +47,9 @@ justify-content: center;
     height: 100%;
     width: 100%;
     background-color: #000;
-    opacity: 0.3;
+    opacity: 0.2;
     z-index: 10;
-  }    
+  }
 }
 `
 

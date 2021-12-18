@@ -42,7 +42,7 @@ const WorkCard: FC<Props> = (props: Props) => {
     } else {
       return <></>
     }
-  } 
+  }
   return (
     <>
       <CardWithHeader

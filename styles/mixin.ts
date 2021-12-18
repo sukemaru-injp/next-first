@@ -9,11 +9,9 @@ export const hover = (content: string) => {
   return hoverCss
 }
 
-interface Point {
-  point: string
-}
+type Point = 'default'|'mobile'|'tabletOnly'|'spOnly'|'spSmallOnly'
 
-export const mediaQuery = (point: string, content: string) => {
+export const mediaQuery = (point: Point, content: string) => {
   let mediaQueryPoint
   switch (point) {
   case 'default':
@@ -30,9 +28,6 @@ export const mediaQuery = (point: string, content: string) => {
     break
   case 'spSmallOnly':
     mediaQueryPoint = 'screen and (max-width : 350px)'
-    break
-  case 'pcOnly': 
-    mediaQueryPoint = 'screen and (min-width : 1025px)'
     break
   }
   const mediaQueryCss = css `
