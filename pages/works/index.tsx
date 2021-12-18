@@ -32,6 +32,7 @@ const Works: NextPage = () => {
               title={item.title}
               image={item.image}
               content={item.content}
+              link={item.link || ''}
               date={item?.date || ''} />
           </CardWrapper> 
         })}

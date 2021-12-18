@@ -43,6 +43,14 @@ const WorkCard: FC<Props> = (props: Props) => {
       return <></>
     }
   }
+  const Url = () => {
+    if (props?.link) {
+      return <Content>URL:&ensp;<a href={props.link} target="_blank" rel="noreferrer" >{props.link}</a></Content>
+    } else {
+      return <></>
+    }
+  }
+
   return (
     <>
       <CardWithHeader
@@ -61,6 +69,7 @@ const WorkCard: FC<Props> = (props: Props) => {
             {map(props.content, (v, idx) => {
               return <Content key={`content${idx}`}>{v}</Content>
             })}
+            <Url />
           </ContentWrapper>
         </InnerWrapper>
       </CardWithHeader>
