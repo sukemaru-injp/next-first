@@ -2,8 +2,8 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import PageWrapper from '../components/atoms/PageWrapper'
-import styled from 'styled-components'
 import MainHeader from '../components/templates/MainHeader'
+import DefaultFooter from '../components/atoms/footer'
 
 const AllHead = () => {
   return (
@@ -23,6 +23,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <PageWrapper>
         <Component {...pageProps} />
       </PageWrapper>
+      <DefaultFooter />
     </>
   )
 }

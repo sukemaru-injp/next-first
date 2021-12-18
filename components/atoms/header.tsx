@@ -15,6 +15,10 @@ const Title = styled.h1`
 `
 
 const HeaderWrapper = styled.header<Props>`
+position: sticky;
+top: 0;
+z-index: 30;
+opacity: 0.9;
 width: 100%;
 height: 70px;
 background-color: ${color.main};
