@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 display: flex;
 align-items: center;
 justify-content: space-around;
-height: 100vh;
+padding: 40px 0;
 
 ${mediaQuery('mobile', `
 flex-flow: column
@@ -23,15 +23,13 @@ font-size: 1.2rem;
 `
 
 const ContentWrapper = styled.div`
-width: 50vw;
 padding: 10px;
-background-color: ${color.defaultBg};
 
 ${mediaQuery('mobile', `
-width: 100vw;
-padding: 20px;
+padding: 20px 10px;
 `)}
 `
+
 const ImageWrapper = styled.div`
 position: relative;
 display: flex;
