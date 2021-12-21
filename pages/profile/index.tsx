@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Image from 'next/image'
 import { contextInner } from '../../src/ui'
 import Accounts from '../../components/templates/Accounts'
@@ -21,9 +21,19 @@ const Sentence = styled.p`
 line-height: 1.2rem;
 font-size: 1.2rem;
 `
+export const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
 
 const ContentWrapper = styled.div`
 padding: 10px;
+animation-name: ${fadeIn};
+animation-duration: 1s;
 
 ${mediaQuery('mobile', `
 padding: 20px 10px;

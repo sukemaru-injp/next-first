@@ -2,6 +2,8 @@
 
 ## Frontend Developer Sukemaru
 
+URL: https://www.sukemaru.net/profile
+
 Basic authentication
 User: admin
-Pass: 2222
+Pin: 2222
