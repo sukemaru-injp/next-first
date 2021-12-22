@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import styled, { keyframes } from 'styled-components'
 import Image from 'next/image'
-import { contextInner } from '../../src/ui'
+import { contentInner } from '../../src/ui'
 import Accounts from '../../components/templates/Accounts'
 import { mediaQuery } from '../../styles/mixin'
-import { color } from '../../styles/constants' 
+import { cloneDeep } from 'lodash'
 
 const Wrapper = styled.div`
 display: flex;
@@ -60,8 +60,11 @@ justify-content: center;
   }
 }
 `
+interface Props {
+  contents: string[]
+}
 
-const Home: NextPage = () => {
+const Profile: NextPage<Props> = (props: Props) => {
   return (
     <>
       <Wrapper>
@@ -77,7 +80,7 @@ const Home: NextPage = () => {
           </ImageWrapper>
         </ContentWrapper>
         <ContentWrapper>
-          {contextInner.map((item, idx) => 
+          {props.contents.map((item, idx) => 
             <Sentence key={`context${idx}`}>{item}</Sentence>
           )}
           <Accounts />
@@ -87,4 +90,11 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export const getStaticProps = () => {
+  const contents = cloneDeep(contentInner)
+  return {
+    props: { contents }
+  }
+}
+
+export default Profile
