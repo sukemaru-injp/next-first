@@ -1,6 +1,6 @@
 import { ReactNode, FC } from 'react'
 import styled from 'styled-components'
-import { color } from '../../styles/constants'
+import { mediaQuery } from '../../styles/mixin'
 
 interface Props {
   children: ReactNode
@@ -10,6 +10,10 @@ const CardStyle = styled.div<Props>`
 box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
 background-color: #fff;
 width: 650px;
+
+${mediaQuery('mobile', `
+width: 280px;
+`)}
 `
 const LargeCardStyle = styled(CardStyle)`
 width: 800px;
