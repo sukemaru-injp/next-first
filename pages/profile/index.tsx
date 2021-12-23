@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import styled, { keyframes } from 'styled-components'
 import Image from 'next/image'
 import { contentInner } from '../../src/ui'
@@ -90,7 +90,7 @@ const Profile: NextPage<Props> = (props: Props) => {
   )
 }
 
-export const getStaticProps = () => {
+export const getStaticProps: GetStaticProps<Props> = () => {
   const contents = cloneDeep(contentInner)
   return {
     props: { contents }

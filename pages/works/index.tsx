@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import WorkCard from '../../components/templates/WorkCard'
-import type { NextPage } from 'next'
-import { map } from 'lodash'
+import type { NextPage, GetStaticProps } from 'next'
+import { map, cloneDeep } from 'lodash'
 import { workDetails } from '../../src/ui'
 
 export interface workUi {
@@ -10,6 +10,10 @@ export interface workUi {
   content: string[]
   link?: string
   date?: string
+}
+
+interface Props {
+  contents: workUi[]
 }
 
 const PageWrapper = styled.div`
@@ -22,11 +26,11 @@ const CardWrapper = styled.div`
 margin: 40px 0;
 `
 
-const Works: NextPage = () => {
+const Works: NextPage<Props> = (props: Props) => {
   return (
     <>
       <PageWrapper>
-        {map(workDetails, (item, idx) => {
+        {map(props.contents, (item, idx) => {
           return <CardWrapper key={`item${idx}`}>
             <WorkCard
               title={item.title}
@@ -39,6 +43,13 @@ const Works: NextPage = () => {
       </PageWrapper>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps<Props> = () => {
+  const contents = cloneDeep(workDetails)
+  return {
+    props: { contents }
+  }
 }
 
 export default Works
