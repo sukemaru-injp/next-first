@@ -3,6 +3,7 @@ import CardWithHeader from '../parts/CardWithHeader'
 import Image from 'next/image'
 import { FC } from 'react'
 import { map } from 'lodash'
+import { mediaQuery } from '../../styles/mixin'
 
 interface Props {
   image: string
@@ -30,6 +31,9 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 20px;
+${mediaQuery('mobile', `
+flex-flow: column
+`)}
 `
 const ContentWrapper = styled.div`
 padding: 10px 20px;
