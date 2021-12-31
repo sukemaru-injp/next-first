@@ -1,8 +1,9 @@
 import { Skill } from '../components/templates/SkillCards'
-import { format } from 'date-fns'
+import { format, differenceInCalendarYears } from 'date-fns'
 import { workUi } from '../pages/works'
 
-export const contentInner = ['Ryosuke Kubotaのページです。平成9年8月21日生まれ、24歳です。', '旅行と美味しいものを食べることを楽しみに生きています。', '現在はtoBの自社開発でフロントエンドエンジニアとして設計や開発に従事。', '前職は国立印刷局にて公務員として勤務、独学でサービス開発を学んだ後、', '現在の会社にジョイン。', '日々の仕事に勤しみながら、技術力を磨き中です。']
+const age = differenceInCalendarYears(new Date(), new Date(1997, 8, 21))
+export const contentInner = [`Ryosuke Kubotaのページです。平成9年8月21日生まれ、${age}歳です。`, '旅行と美味しいものを食べることを楽しみに生きています。', '現在はtoBの自社開発でフロントエンドエンジニアとして設計や開発に従事。', '前職は国立印刷局にて公務員として勤務、独学でサービス開発を学んだ後、', '現在の会社にジョイン。', '日々の仕事に勤しみながら、技術力を磨き中です。']
 
 export const buttonUi = [
   {
