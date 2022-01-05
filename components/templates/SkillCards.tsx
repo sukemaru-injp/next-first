@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import CardWithTitle from '../parts/CardWithTitle'
 import { map } from 'lodash'
 import { skillInner } from '../../src/ui'
-import { mediaQuery } from '../../styles/mixin'
+import { mediaQuery, hover } from '../../styles/mixin'
 
 export interface Skill {
   title: string,
@@ -10,8 +10,12 @@ export interface Skill {
 }
 const InnerWrapper = styled.div`
 padding: 20px;
+transition: all 0.2s;
 ${mediaQuery('mobile', `
 padding: 30px 20px;
+`)}
+${hover(`
+transform: scale(1.02);
 `)}
 `
 const Content = styled.p`

@@ -1,9 +1,9 @@
 import Buttons from '../parts/Buttons'
 import Header from '../atoms/header'
-import { FC } from 'react'
+import { VFC } from 'react'
 import { buttonUi } from '../../src/ui'
 
-const MainHeader = () => {
+const MainHeader: VFC = () => {
   return (
     <>
       <Header>
