@@ -22,6 +22,13 @@
       }
     ],
     "object-curly-spacing": ["error", "always"],
-    "no-console": ["warn", {"allow": ["warn"] }]
+    "no-console": ["warn", {"allow": ["warn"] }],
+    // JSX中括弧にスペースを入れない
+    "react/jsx-curly-spacing": ["warn", "never"],
+    // Always self-close tags that have no children
+    "react/self-closing-comp": ["error", {
+      "component": true,
+      "html": true
+    }]
   }
 }
