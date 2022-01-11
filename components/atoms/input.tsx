@@ -15,8 +15,7 @@ export const TextInput: FC<Props> = (props: Props) => {
     <>
       <Input
         value={props.value}
-        onChange={props.onChange}>
-      </Input>
+        onChange={props.onChange} />
     </>
   )
 }
