@@ -3,6 +3,7 @@ import WorkCard from '../../components/templates/WorkCard'
 import type { NextPage, GetStaticProps } from 'next'
 import { map, cloneDeep } from 'lodash'
 import { workDetails } from '../../src/ui'
+import Accounts from '../../components/templates/Accounts'
 
 export interface workUi {
   title: string
@@ -40,6 +41,7 @@ const Works: NextPage<Props> = (props: Props) => {
               date={item?.date || ''} />
           </CardWrapper> 
         })}
+        <Accounts />
       </PageWrapper>
     </>
   )
