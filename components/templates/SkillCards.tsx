@@ -3,6 +3,7 @@ import CardWithTitle from '../parts/CardWithTitle'
 import { map } from 'lodash'
 import { skillInner } from '../../src/ui'
 import { mediaQuery, hover } from '../../styles/mixin'
+import { VFC } from 'react'
 
 export interface Skill {
   title: string,
@@ -24,7 +25,7 @@ font-size: 1.1rem;
 padding: 5px 10px;
 `
 
-const SkillCards = () => {
+const SkillCards: VFC = () => {
   return (
     <>
       {map(skillInner, (v: Skill, idx) => {

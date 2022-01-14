@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import { color } from '../../styles/constants'
+import { memo } from 'react'
 
 const Wrapper = styled.div`
 padding: 20px 0;
@@ -49,4 +50,4 @@ const Accounts = () => {
   )
 }
 
-export default Accounts
+export default memo(Accounts)

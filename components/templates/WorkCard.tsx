@@ -64,7 +64,7 @@ const WorkCard: FC<Props> = (props: Props) => {
             <Image
               src={`${props.image}`}
               alt="profile"
-              width={props?.imageWidth || 480 }
+              width={props?.imageWidth || 480}
               height={props?.imageHeight || 350}
               objectFit="cover" />              
           </ImageWrapper>
@@ -80,4 +80,5 @@ const WorkCard: FC<Props> = (props: Props) => {
     </>
   )
 }
+
 export default WorkCard
