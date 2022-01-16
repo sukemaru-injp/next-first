@@ -1,6 +1,12 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import styled from 'styled-components'
-import SkillCards from '../../components/templates/SkillCards'
+import SkillCards, { Skill } from '../../components/templates/SkillCards'
+import { skillInner } from '../../src/ui'
+import { cloneDeep } from 'lodash'
+
+interface Props {
+  skills: Skill[]
+}
 
 const PageWrapper = styled.div`
 padding: 10px;
@@ -9,14 +15,22 @@ align-items: center;
 flex-flow: column;
 `
 
-const Skill: NextPage = () => {
+const SkillPage: NextPage<Props> = ({ skills }: Props) => {
   return (
     <>
       <PageWrapper>
-        <SkillCards />
+        <SkillCards
+          uiData={skills} />
       </PageWrapper>
     </>
   )
 }
 
-export default Skill
+export const getStaticProps: GetStaticProps<Props> = () => {
+  const skills = cloneDeep(skillInner)
+  return {
+    props: { skills }
+  }
+}
+
+export default SkillPage

@@ -1,7 +1,6 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import CardWithTitle from '../parts/CardWithTitle'
 import { map } from 'lodash'
-import { skillInner } from '../../src/ui'
 import { mediaQuery, hover } from '../../styles/mixin'
 import { VFC } from 'react'
 
@@ -9,9 +8,25 @@ export interface Skill {
   title: string,
   sentence: string[]
 }
+
+interface Props {
+  uiData: Skill[]
+}
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
+
 const InnerWrapper = styled.div`
 padding: 20px;
 transition: all 0.2s;
+animation-name: ${fadeIn};
+animation-duration: 1s;
 ${mediaQuery('mobile', `
 padding: 30px 20px;
 `)}
@@ -25,10 +40,10 @@ font-size: 1.1rem;
 padding: 5px 10px;
 `
 
-const SkillCards: VFC = () => {
+const SkillCards: VFC<Props> = (props: Props) => {
   return (
     <>
-      {map(skillInner, (v: Skill, idx) => {
+      {map(props.uiData, (v: Skill, idx) => {
         return <InnerWrapper key={`skill${idx}`}>
           <CardWithTitle
             title={v.title}>
