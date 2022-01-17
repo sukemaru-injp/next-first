@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import SkillCards, { Skill } from '../../components/templates/SkillCards'
 import { skillInner } from '../../src/ui'
 import { cloneDeep } from 'lodash'
+import { client } from '../../libs/client'
 
 interface Props {
   skills: Skill[]
@@ -26,8 +27,10 @@ const SkillPage: NextPage<Props> = ({ skills }: Props) => {
   )
 }
 
-export const getStaticProps: GetStaticProps<Props> = () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const skills = cloneDeep(skillInner)
+  const data = await client.get({ endpoint: 'test' })
+  console.log('micro', data)
   return {
     props: { skills }
   }
