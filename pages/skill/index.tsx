@@ -29,8 +29,8 @@ const SkillPage: NextPage<Props> = ({ skills }: Props) => {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const skills = cloneDeep(skillInner)
-  const data = await client.get({ endpoint: 'test' })
-  console.log('micro', data)
+  const { contents } = await client.get({ endpoint: 'skills' })
+  console.log('micro', contents)
   return {
     props: { skills }
   }
