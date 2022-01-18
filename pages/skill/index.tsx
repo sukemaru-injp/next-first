@@ -1,8 +1,7 @@
 import type { NextPage, GetStaticProps } from 'next'
 import styled from 'styled-components'
 import SkillCards, { Skill } from '../../components/templates/SkillCards'
-import { skillInner } from '../../src/ui'
-import { cloneDeep } from 'lodash'
+import { map } from 'lodash'
 import { client } from '../../libs/client'
 
 interface Props {
@@ -28,9 +27,11 @@ const SkillPage: NextPage<Props> = ({ skills }: Props) => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const skills = cloneDeep(skillInner)
   const { contents } = await client.get({ endpoint: 'skills' })
-  console.log('micro', contents)
+  const skills = map(contents, ({ title, sentence }) => ({
+    title,
+    sentence: sentence.split('/')
+  }))
   return {
     props: { skills }
   }

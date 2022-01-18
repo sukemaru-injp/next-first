@@ -19,24 +19,6 @@ export const buttonUi = [
     to: '/works'
   }
 ]
-export const skillInner: Skill[] = [
-  {
-    title: 'JavaScript',
-    sentence: ['EcmaScript2015以降', '実務における経験はVue.jsにおいてv2,v3でのNuxt.jsでの開発。', '個人開発では主に、React,Next.js,Typescriptを使用して開発しています。']
-  },
-  {
-    title: 'CSS3',
-    sentence: ['コンポーネント志向なCSS設計', '業務ではSCSS、個人開発ではCSSinJSを主に使っています。']
-  },
-  {
-    title: 'HTML5',
-    sentence: ['アクセシビリティを考慮したマークアップ。']
-  },
-  {
-    title: 'Github',
-    sentence: ['チーム開発でのソースコードの管理。']
-  }
-]
 
 export const workDetails: workUi[] = [
   {
