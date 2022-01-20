@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import Image from 'next/image'
 import { contentInner } from '../../src/ui'
 import Accounts from '../../components/templates/Accounts'
-import { mediaQuery } from '../../styles/mixin'
+import { mediaQuery, fadeIn } from '../../styles/mixin'
 import { cloneDeep } from 'lodash'
 
 const Wrapper = styled.div`
@@ -20,14 +20,6 @@ flex-flow: column
 const Sentence = styled.p`
 line-height: 1.2rem;
 font-size: 1.2rem;
-`
-export const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 `
 
 const ContentWrapper = styled.div`

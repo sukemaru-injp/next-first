@@ -4,6 +4,7 @@ import type { NextPage, GetStaticProps } from 'next'
 import { map, cloneDeep } from 'lodash'
 import { workDetails } from '../../src/ui'
 import Accounts from '../../components/templates/Accounts'
+import { fadeIn } from '../../styles/mixin'
 
 export interface workUi {
   title: string
@@ -21,6 +22,8 @@ const PageWrapper = styled.div`
 display: flex;
 align-items: center;
 flex-flow: column;
+animation-name: ${fadeIn};
+animation-duration: 1s;
 `
 
 const CardWrapper = styled.div`

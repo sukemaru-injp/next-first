@@ -1,4 +1,4 @@
-import styled, { css, Interpolation } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 export const hover = (content: string) => {
   const hoverCss = css`
@@ -37,3 +37,12 @@ export const mediaQuery = (point: Point, content: string) => {
   `
   return mediaQueryCss
 }
+
+export const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
