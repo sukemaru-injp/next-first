@@ -17,11 +17,7 @@ export const buttonUi = [
   {
     title: 'Works',
     to: '/works'
-  },
-  // {
-  //   title: 'Media',
-  //   to: '/media'
-  // }
+  }
 ]
 
 export const workDetails: workUi[] = [
