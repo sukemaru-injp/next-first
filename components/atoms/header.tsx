@@ -6,14 +6,6 @@ interface Props {
   children: ReactNode
 }
 
-const Title = styled.h1`
-  color: #fff;
-  
-  &:hover {
-    cursor: pointer;
-  }
-`
-
 const HeaderWrapper = styled.header<Props>`
 position: sticky;
 top: 0;

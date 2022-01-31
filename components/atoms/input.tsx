@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 interface Props {
   value: string
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  // eslint-disable-next-line no-unused-vars
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
 const Input = styled.input`

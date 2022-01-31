@@ -5,6 +5,7 @@ import { color } from '../../styles/constants'
 
 interface Props {
   title: string
+  // eslint-disable-next-line no-unused-vars
   onClick?: (event?: any) => any
 }
 const ButtonStyle = styled.button`

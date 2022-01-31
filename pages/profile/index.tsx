@@ -1,5 +1,5 @@
 import type { NextPage, GetStaticProps } from 'next'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import Image from 'next/image'
 import { contentInner } from '../../src/ui'
 import Accounts from '../../components/templates/Accounts'

@@ -14,7 +14,6 @@ line-height: 1.1rem;
 font-size: 1.1rem;
 padding: 10px;
 `
-interface Props {}
 
 const DefaultFooter = () => {
   return (

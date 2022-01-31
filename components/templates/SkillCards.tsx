@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import CardWithTitle from '../parts/CardWithTitle'
 import { map } from 'lodash'
 import { mediaQuery, hover, fadeIn } from '../../styles/mixin'
