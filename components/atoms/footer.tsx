@@ -18,7 +18,7 @@ padding: 10px;
 const DefaultFooter = () => {
   return (
     <Footer>
-      <Content>© sukemaru</Content>
+      <Content>© 2022 - sukemaru</Content>
     </Footer>
   )
 }
