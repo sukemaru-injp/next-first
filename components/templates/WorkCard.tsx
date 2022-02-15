@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { FC } from 'react'
 import { map } from 'lodash'
 import { mediaQuery } from '../../styles/mixin'
-
+import { color } from '../../styles/constants'
 interface Props {
   image: string
   title: string
@@ -16,14 +16,18 @@ interface Props {
 }
 
 const Content = styled.p`
-line-height: 1.1rem;
-font-size: 1.1rem;
-padding: 2px;
+line-height: 1.2;
+padding: 5px;
 `
 const ImageWrapper = styled.div`
 & > span {
 border-radius: 5px;
 }
+`
+
+const SubContent = styled.p`
+color: ${color.subText};
+padding: 5px;
 `
 
 const InnerWrapper = styled.div`
@@ -39,17 +43,21 @@ const ContentWrapper = styled.div`
 padding: 10px 20px;
 `
 
+const Anchor = styled.a`
+color: ${color.main};
+`
+
 const WorkCard: FC<Props> = (props: Props) => {
   const DateText = () => {
     if (props?.date) {
-      return <Content>{props.date}&ensp;〜</Content>
+      return <SubContent>{props.date}&ensp;〜</SubContent>
     } else {
       return <></>
     }
   }
   const Url = () => {
     if (props?.link) {
-      return <Content>URL:&ensp;<a href={props.link} target="_blank" rel="noreferrer" >{props.link}</a></Content>
+      return <SubContent>URL:&ensp;<Anchor href={props.link} target="_blank" rel="noreferrer" >{props.link}</Anchor></SubContent>
     } else {
       return <></>
     }

@@ -15,6 +15,9 @@ height: 70px;
 width: 100px;
 border-radius: 5px;
 border: none;
+text-align: center;
+font-size: 1.2rem;
+font-weight: bold;
 background-color: ${color.main};
 transition: all 0.3s;
 &:focus {
@@ -35,7 +38,7 @@ export const SelectButton: FC<Props> = (props: Props) => {
   return (
     <SelectButtonStyle
       onClick={props.onClick}>
-      <h3>{props.title}</h3>
+      <h2>{props.title}</h2>
     </SelectButtonStyle>
   )
 }
@@ -44,7 +47,7 @@ export const Button: FC<Props> = (props: Props) => {
   return (
     <ButtonStyle
       onClick={props.onClick}>
-      <h3>{props.title}</h3>
+      <h2>{props.title}</h2>
     </ButtonStyle>
   )
 }

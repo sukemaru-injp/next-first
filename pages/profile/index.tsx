@@ -18,8 +18,7 @@ flex-flow: column
 `
 
 const Sentence = styled.p`
-line-height: 1.2rem;
-font-size: 1.2rem;
+line-height: 1.2;
 `
 
 const ContentWrapper = styled.div`
