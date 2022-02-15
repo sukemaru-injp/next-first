@@ -26,9 +26,11 @@ transform: scale(1.02);
 `)}
 `
 const Content = styled.p`
-line-height: 1.1rem;
+line-height: 1.5;
 font-size: 1.1rem;
-padding: 5px 10px;
+`
+const ContentWrapper = styled.div`
+padding: 20px 10px;
 `
 
 const SkillCards: VFC<Props> = (props: Props) => {
@@ -38,12 +40,16 @@ const SkillCards: VFC<Props> = (props: Props) => {
         return <InnerWrapper key={`skill${idx}`}>
           <CardWithTitle
             title={v.title}>
-            {map(v.sentence, (item, idx) => {
-              return <Content key={`sentence${idx}`}>
-                { item } 
-              </Content>
-            })
-            }
+            <ContentWrapper>
+              {map(v.sentence, (item, idx) => {
+                return(
+                  <Content key={`sentence${idx}`}>
+                    { item } 
+                  </Content>
+                )
+              })
+              }
+            </ContentWrapper>
           </CardWithTitle>
         </InnerWrapper>
       })}
