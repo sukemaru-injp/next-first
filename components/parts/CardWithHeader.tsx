@@ -8,14 +8,14 @@ interface Props {
 }
 
 const Header = styled.header`
-
 width: 100%;
 height: 60PX;
 background-color: ${color.cardHeader};
-padding: 15px; 
+padding: 20px 15px; 
 `
 const Title = styled.h3`
 color: #fff;
+font-weight: bold;
 `
 
 const CardWithHeader: FC<Props> = (props: Props) => {

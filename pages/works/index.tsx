@@ -5,6 +5,7 @@ import { map, cloneDeep } from 'lodash'
 import { workDetails } from '../../src/ui'
 import Accounts from '../../components/templates/Accounts'
 import { fadeIn } from '../../styles/mixin'
+import { color } from '../../styles/constants'
 
 export interface workUi {
   title: string
@@ -19,32 +20,48 @@ interface Props {
 }
 
 const PageWrapper = styled.div`
+padding: 30px 0;
+animation-name: ${fadeIn};
+animation-duration: 1s;
+`
+
+const ContentWrapper = styled.div`
 display: flex;
 align-items: center;
 flex-flow: column;
-animation-name: ${fadeIn};
-animation-duration: 1s;
 `
 
 const CardWrapper = styled.div`
 margin: 40px 0;
 `
 
+const Title = styled.h2`
+color: ${color.main};
+font-weight: bold;
+text-align: center;
+font-size: 1.2rem;
+`
+
 const Works: NextPage<Props> = (props: Props) => {
   return (
     <>
       <PageWrapper>
-        {map(props.contents, (item, idx) => {
-          return <CardWrapper key={`item${idx}`}>
-            <WorkCard
-              title={item.title}
-              image={item.image}
-              content={item.content}
-              link={item.link || ''}
-              date={item?.date || ''} />
-          </CardWrapper> 
-        })}
-        <Accounts />
+        <Title>
+          My Works
+        </Title>
+        <ContentWrapper>
+          {map(props.contents, (item, idx) => {
+            return <CardWrapper key={`item${idx}`}>
+              <WorkCard
+                title={item.title}
+                image={item.image}
+                content={item.content}
+                link={item.link || ''}
+                date={item?.date || ''} />
+            </CardWrapper> 
+          })}
+          <Accounts />
+        </ContentWrapper>
       </PageWrapper>
     </>
   )

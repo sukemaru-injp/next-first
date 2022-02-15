@@ -5,11 +5,16 @@ import { color } from '../../styles/constants'
 
 const Title = styled.h2`
 color: ${color.subText};
-padding: 0 0 5px 0;
+font-weight: bold;
+padding: 0 0 15px 0;
 `
 
 const InnerWrapper = styled.div`
 padding: 20px
+`
+
+const Hr = styled.hr`
+color: #ddd;
 `
 
 interface Props {
@@ -25,7 +30,7 @@ const CardWithTitle: FC<Props> = (props: Props) => {
           <Title>
             {props.title}
           </Title>
-          <hr />
+          <Hr />
           {props.children}
         </InnerWrapper>
       </Card>
