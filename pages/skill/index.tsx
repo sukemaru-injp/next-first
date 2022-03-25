@@ -30,6 +30,7 @@ const SkillPage: NextPage<Props> = ({ skills, notionRes }: Props) => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
+  // TODO: microCMSを剥がす
   const { contents } = await client.get({ endpoint: 'skills' })
   const skills = map(contents, ({ title, sentence }) => ({
     title,
