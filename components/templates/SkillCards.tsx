@@ -36,43 +36,46 @@ padding: 20px 10px;
 
 const SkillCards: VFC<Props> = (props: Props) => {
   const { results } = props.data
-  console.log('results', results)
   return (
     <>
-      {map(props.uiData, (v: Skill, idx) => {
-        return <InnerWrapper key={`skill${idx}`}>
-          <CardWithTitle
-            title={v.title}>
-            <ContentWrapper>
-              {map(v.sentence, (item, idx) => {
-                return(
-                  <Content key={`sentence${idx}`}>
-                    { item } 
-                  </Content>
-                )
-              })
-              }
-            </ContentWrapper>
-          </CardWithTitle>
-        </InnerWrapper>
-      })}
-      {/* {map(results, (v, id) => {
-        return <InnerWrapper key={`skill${id}`}>
-          <CardWithTitle
-            title={v?.properties.title}>
-            <ContentWrapper>
-              {map(v.sentence, (item, idx) => {
-                return(
-                  <Content key={`sentence${idx}`}>
-                    { item } 
-                  </Content>
-                )
-              })
-              }
-            </ContentWrapper>
-          </CardWithTitle>
-        </InnerWrapper>
+      {/* {map(props.uiData, (v: Skill, idx) => {
+        return (
+          <InnerWrapper key={`skill${idx}`}>
+            <CardWithTitle
+              title={v.title}>
+              <ContentWrapper>
+                {map(v.sentence, (item, idx) => {
+                  return(
+                    <Content key={`sentence${idx}`}>
+                      { item } 
+                    </Content>
+                  )
+                })
+                }
+              </ContentWrapper>
+            </CardWithTitle>
+          </InnerWrapper>
+        )
       })} */}
+      {map(results, (v, id) => {
+        return (
+          <InnerWrapper key={`skill${id}`}>
+            <CardWithTitle
+              title={v.properties?.name?.title[0]?.plain_text || ''}>
+              <ContentWrapper>
+                {map(v.properties?.content.rich_text[0]?.plain_text?.split('/'), (item, idx) => {
+                  return(
+                    <Content key={`sentence${idx}`}>
+                      { item } 
+                    </Content>
+                  )
+                })
+                }
+              </ContentWrapper>
+            </CardWithTitle>
+          </InnerWrapper>
+        )
+      })}
     </>
   )
 }

@@ -35,7 +35,17 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     title,
     sentence: sentence.split('/')
   }))
-  const notionRes = await notion.databases.query({ database_id: databaseId })
+  const notionRes = await notion.databases.query(
+    {
+      database_id: databaseId,
+      sorts: [
+        {
+          property: 'sort_num',
+          direction: 'ascending',
+        }
+      ]
+    }
+  )
   return {
     props: { skills, notionRes }
   }
