@@ -81,7 +81,7 @@ const Profile: NextPage<Props> = (props: Props) => {
   )
 }
 
-export const getStaticProps: GetStaticProps<Props> = () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const contents = cloneDeep(contentInner)
   return {
     props: { contents }

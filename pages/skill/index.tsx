@@ -3,9 +3,11 @@ import styled from 'styled-components'
 import SkillCards, { Skill } from '../../components/templates/SkillCards'
 import { map } from 'lodash'
 import { client } from '../../libs/client'
+import { notion, databaseId, DatabaseResType } from '../../libs/notion'
 
 interface Props {
-  skills: Skill[]
+  skills: Skill[],
+  notionRes: DatabaseResType
 }
 
 const PageWrapper = styled.div`
@@ -15,12 +17,13 @@ align-items: center;
 flex-flow: column;
 `
 
-const SkillPage: NextPage<Props> = ({ skills }: Props) => {
+const SkillPage: NextPage<Props> = ({ skills, notionRes }: Props) => {
   return (
     <>
       <PageWrapper>
         <SkillCards
-          uiData={skills} />
+          uiData={skills}
+          data={notionRes} />
       </PageWrapper>
     </>
   )
@@ -32,8 +35,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     title,
     sentence: sentence.split('/')
   }))
+  const notionRes = await notion.databases.query({ database_id: databaseId })
   return {
-    props: { skills }
+    props: { skills, notionRes }
   }
 }
 
