@@ -23,7 +23,7 @@ const SkillPage: NextPage<Props> = ({ skills, notionRes }: Props) => {
       <PageWrapper>
         <SkillCards
           uiData={skills}
-          data={notionRes} />
+          data={notionRes.results} />
       </PageWrapper>
     </>
   )

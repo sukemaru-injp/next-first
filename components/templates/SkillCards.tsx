@@ -11,7 +11,7 @@ export interface Skill {
 }
 interface Props {
   uiData: Skill[]
-  data: DatabaseResType
+  data: DatabaseResType['results']
 }
 
 const InnerWrapper = styled.div`
@@ -35,10 +35,9 @@ padding: 20px 10px;
 `
 
 const SkillCards: VFC<Props> = (props: Props) => {
-  const { results } = props.data
   return (
     <>
-      {/* {map(props.uiData, (v: Skill, idx) => {
+      {map(props.uiData, (v: Skill, idx) => {
         return (
           <InnerWrapper key={`skill${idx}`}>
             <CardWithTitle
@@ -56,14 +55,14 @@ const SkillCards: VFC<Props> = (props: Props) => {
             </CardWithTitle>
           </InnerWrapper>
         )
-      })} */}
-      {map(results, (v, id) => {
+      })}
+      {/* {map(props.data, (v, id) => {
         return (
           <InnerWrapper key={`skill${id}`}>
             <CardWithTitle
-              title={v.properties?.name?.title[0]?.plain_text || ''}>
+              title={v?.properties?.name?.title[0]?.plain_text || ''}>
               <ContentWrapper>
-                {map(v.properties?.content.rich_text[0]?.plain_text?.split('/'), (item, idx) => {
+                {map(v?.properties?.content?.rich_text[0]?.plain_text?.split('/'), (item, idx) => {
                   return(
                     <Content key={`sentence${idx}`}>
                       { item } 
@@ -75,7 +74,7 @@ const SkillCards: VFC<Props> = (props: Props) => {
             </CardWithTitle>
           </InnerWrapper>
         )
-      })}
+      })} */}
     </>
   )
 }
