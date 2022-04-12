@@ -1,13 +1,12 @@
-import React, { FC } from 'react'
+import { FC, ComponentProps } from 'react'
 import styled from 'styled-components'
 import { hover } from '../../styles/mixin'
 import { color } from '../../styles/constants'
 
-interface Props {
+interface Props extends ComponentProps<'button'> {
   title: string
-  // eslint-disable-next-line no-unused-vars
-  onClick?: (event?: any) => any
 }
+
 const ButtonStyle = styled.button`
 padding: 10px;
 color: ${color.text};
@@ -31,7 +30,7 @@ background-color: ${color.sub};
 
 const SelectButtonStyle = styled(ButtonStyle)`
 background-color: ${color.sub};
-color: ${color.main}
+color: ${color.main};
 `
 
 export const SelectButton: FC<Props> = (props: Props) => {
@@ -51,4 +50,5 @@ export const Button: FC<Props> = (props: Props) => {
     </ButtonStyle>
   )
 }
+
 export default Button
