@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export function middleware(req: NextRequest) {
-  if (process.env.NODE_ENV !== 'production') { return }
+  if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development') { return }
   const basicAuth = req.headers.get('authorization')
   if (basicAuth) {
     const auth = basicAuth.split(' ')[1]

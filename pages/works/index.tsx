@@ -12,7 +12,8 @@ export interface workUi {
   image: string
   content: string[]
   link?: string
-  date?: string
+  date?: string,
+  tech?: string
 }
 
 interface Props {
@@ -56,7 +57,8 @@ const Works: NextPage<Props> = (props: Props) => {
                 title={item.title}
                 image={item.image}
                 content={item.content}
-                link={item.link || ''}
+                link={item?.link || ''}
+                tech={item?.tech || ''}
                 date={item?.date || ''} />
             </CardWrapper> 
           })}

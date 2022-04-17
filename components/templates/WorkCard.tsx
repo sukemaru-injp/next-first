@@ -11,6 +11,7 @@ interface Props {
   content: string[]
   link?: string
   date?: string
+  tech?: string
   imageHeight?: string
   imageWidth?: string
 }
@@ -63,6 +64,13 @@ const WorkCard: FC<Props> = (props: Props) => {
     }
   }
 
+  const TechInfo = () => {
+    if (props?.tech) {
+      return <SubContent>使用技術:&ensp;{props.tech}</SubContent>
+    }
+    return <></>
+  }
+
   return (
     <>
       <CardWithHeader
@@ -82,6 +90,7 @@ const WorkCard: FC<Props> = (props: Props) => {
               return <Content key={`content${idx}`}>{v}</Content>
             })}
             <Url />
+            <TechInfo />
           </ContentWrapper>
         </InnerWrapper>
       </CardWithHeader>
