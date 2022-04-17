@@ -18,7 +18,7 @@ width: 280px;
 const LargeCardStyle = styled(CardStyle)`
 width: 800px;
 ${mediaQuery('mobile', `
-width: 280px;
+width: 320px;
 `)}
 `
 

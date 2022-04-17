@@ -19,6 +19,7 @@ interface Props {
 const Content = styled.p`
 line-height: 1.2;
 padding: 5px;
+overflow-wrap: break-word;
 `
 const ImageWrapper = styled.div`
 & > span {
@@ -29,6 +30,7 @@ border-radius: 5px;
 const SubContent = styled.p`
 color: ${color.subText};
 padding: 5px;
+overflow-wrap: break-word;
 `
 
 const InnerWrapper = styled.div`
@@ -42,6 +44,10 @@ flex-flow: column
 `
 const ContentWrapper = styled.div`
 padding: 10px 20px;
+max-width: 100%;
+${mediaQuery('mobile', `
+padding: 10px 5px;
+`)}
 `
 
 const Anchor = styled.a`
