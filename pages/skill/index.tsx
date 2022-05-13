@@ -17,20 +17,18 @@ align-items: center;
 flex-flow: column;
 `
 
-const SkillPage: NextPage<Props> = ({ skills, notionRes }: Props) => {
+const SkillPage: NextPage<Props> = ({ skills }: Props) => {
   return (
     <>
       <PageWrapper>
         <SkillCards
-          uiData={skills}
-          data={notionRes.results} />
+          uiData={skills} />
       </PageWrapper>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  // TODO: microCMSを剥がす
   const { contents } = await client.get({ endpoint: 'skills' })
   const skills = map(contents, ({ title, sentence }) => ({
     title,

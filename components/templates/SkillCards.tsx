@@ -3,7 +3,6 @@ import CardWithTitle from '../parts/CardWithTitle'
 import { map } from 'lodash'
 import { mediaQuery, hover, fadeIn } from '../../styles/mixin'
 import { VFC } from 'react'
-import { DatabaseResType } from '../../libs/notion'
 
 export interface Skill {
   title: string,
@@ -11,7 +10,6 @@ export interface Skill {
 }
 interface Props {
   uiData: Skill[]
-  data: DatabaseResType['results']
 }
 
 const InnerWrapper = styled.div`
@@ -56,25 +54,6 @@ const SkillCards: VFC<Props> = (props: Props) => {
           </InnerWrapper>
         )
       })}
-      {/* {map(props.data, (v, id) => {
-        return (
-          <InnerWrapper key={`skill${id}`}>
-            <CardWithTitle
-              title={v?.properties?.name?.title[0]?.plain_text || ''}>
-              <ContentWrapper>
-                {map(v?.properties?.content?.rich_text[0]?.plain_text?.split('/'), (item, idx) => {
-                  return(
-                    <Content key={`sentence${idx}`}>
-                      { item } 
-                    </Content>
-                  )
-                })
-                }
-              </ContentWrapper>
-            </CardWithTitle>
-          </InnerWrapper>
-        )
-      })} */}
     </>
   )
 }

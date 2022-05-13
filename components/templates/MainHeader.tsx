@@ -5,12 +5,10 @@ import { buttonUi } from '../../src/ui'
 
 const MainHeader: VFC = () => {
   return (
-    <>
-      <Header>
-        <Buttons
-          ui={buttonUi} />
-      </Header>
-    </>
+    <Header>
+      <Buttons
+        ui={buttonUi} />
+    </Header>
   )
 }
 
