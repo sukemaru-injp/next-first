@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { contentInner } from '../../src/ui'
 import Accounts from '../../components/templates/Accounts'
 import { mediaQuery, fadeIn } from '../../styles/mixin'
-import { cloneDeep } from 'lodash'
+import { clone } from 'ramda'
 
 const Wrapper = styled.div`
 display: flex;
@@ -82,7 +82,7 @@ const Profile: NextPage<Props> = (props: Props) => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const contents = cloneDeep(contentInner)
+  const contents = clone(contentInner)
   return {
     props: { contents }
   }
