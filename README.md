@@ -4,8 +4,4 @@
 
 URL: https://www.sukemaru.net/profile
 
-Basic authentication
-User: admin
-Pin: 2222
-
 SSG/microCMS/styled-components
