@@ -3,11 +3,9 @@ import styled from 'styled-components'
 import SkillCards, { Skill } from '../../components/templates/SkillCards'
 import { map } from 'lodash'
 import { client } from '../../libs/client'
-import { notion, databaseId, DatabaseResType } from '../../libs/notion'
 
 interface Props {
   skills: Skill[],
-  notionRes: DatabaseResType
 }
 
 const PageWrapper = styled.div`
@@ -34,19 +32,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     title,
     sentence: sentence.split('/')
   }))
-  const notionRes = await notion.databases.query(
-    {
-      database_id: databaseId,
-      sorts: [
-        {
-          property: 'sort_num',
-          direction: 'ascending',
-        }
-      ]
-    }
-  )
   return {
-    props: { skills, notionRes }
+    props: { skills }
   }
 }
 
