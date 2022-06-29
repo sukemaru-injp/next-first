@@ -1,12 +1,13 @@
 import styled from 'styled-components'
-import { color } from '../../styles/constants'
 
 const Footer = styled.footer`
 width: 100%;
 height: 40px;
 text-align: center;
-background-color: ${color.sub};
-color: ${color.subText};
+${({ theme }) => `
+  background-color: ${theme.color.sub};
+  color: ${theme.color.subText};
+  `}
 `
 
 const Content = styled.p`

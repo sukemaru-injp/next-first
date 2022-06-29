@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 import { Card } from '../atoms/card'
 import { FC, ReactNode } from 'react'  
-import { color } from '../../styles/constants'
 
 const Title = styled.h2`
-color: ${color.subText};
 font-weight: bold;
 padding: 0 0 15px 0;
+
+${({ theme }) => `
+  color: ${theme.color.subText};
+  `}
 `
 
 const InnerWrapper = styled.div`
