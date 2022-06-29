@@ -1,11 +1,10 @@
 import { ReactNode, FC } from 'react'
 import styled from 'styled-components'
-import { color } from '../../styles/constants'
 
 const PageWrapper = styled.div`
 width: 100%;
 min-height: 100vh;
-background-color: ${color.defaultBg};
+background-color: ${({ theme }) => theme.color.defaultBg};
 `
 interface Props {
   children: ReactNode

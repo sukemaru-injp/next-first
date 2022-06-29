@@ -5,7 +5,6 @@ import { map, cloneDeep } from 'lodash'
 import { workDetails } from '../../src/ui'
 import Accounts from '../../components/templates/Accounts'
 import { fadeIn } from '../../styles/mixin'
-import { color } from '../../styles/constants'
 
 export interface workUi {
   title: string
@@ -37,7 +36,7 @@ margin: 40px 0;
 `
 
 const Title = styled.h2`
-color: ${color.main};
+color: ${({ theme }) => theme.color.main};
 font-weight: bold;
 text-align: center;
 font-size: 1.2rem;

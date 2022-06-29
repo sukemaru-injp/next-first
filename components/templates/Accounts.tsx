@@ -1,24 +1,24 @@
 import styled from 'styled-components'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import FacebookIcon from '@mui/icons-material/Facebook'
-import { color } from '../../styles/constants'
-import { memo } from 'react'
+import { FC } from 'react'
 
 const Wrapper = styled.div`
 padding: 20px 0;
 `
+
 const Title = styled.h3`
 font-size: 1.1rem;
-color: ${color.subText}
+color: ${({ theme }) => theme.color.subText};
 `
 
 const IconWrapper = styled.div`
 display: inline-block;
 padding: 5px 10px;
-color: ${color.subText};
+color: ${({ theme }) => theme.color.subText};
 &:hover {
   cursor: pointer;
-  color: ${color.main};
+  color: ${({ theme }) => theme.color.main};
 }
 `
 
@@ -26,7 +26,9 @@ const SubTitle = styled.span`
 padding: 0 5px 0 0;
 `
 
-const Accounts = () => {
+interface Props {}
+
+const Accounts: FC<Props> = () => {
   const toGithub = () => {
     window.open('https://github.com/sukemaru-injp', '_blank')
   }
@@ -50,4 +52,4 @@ const Accounts = () => {
   )
 }
 
-export default memo(Accounts)
+export default Accounts

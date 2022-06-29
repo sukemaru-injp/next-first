@@ -1,7 +1,6 @@
 import { FC, ComponentProps } from 'react'
 import styled from 'styled-components'
 import { hover } from '../../styles/mixin'
-import { color } from '../../styles/constants'
 
 interface Props extends ComponentProps<'button'> {
   title: string
@@ -9,7 +8,6 @@ interface Props extends ComponentProps<'button'> {
 
 const ButtonStyle = styled.button`
 padding: 10px;
-color: ${color.text};
 height: 70px;
 width: 100px;
 border-radius: 5px;
@@ -17,20 +15,29 @@ border: none;
 text-align: center;
 font-size: 1.2rem;
 font-weight: bold;
-background-color: ${color.main};
 transition: all 0.3s;
+
+${({ theme }) => `
+  background-color: ${theme.color.main};
+  color: ${theme.color.text};
+
+  ${hover(`
+    cursor: pointer;
+    background-color: ${theme.color.sub};
+  `)}
+`}
+
 &:focus {
 outline: none;
 }
-${hover(`
-cursor: pointer;
-background-color: ${color.sub};
-`)}
 `
 
 const SelectButtonStyle = styled(ButtonStyle)`
-background-color: ${color.sub};
-color: ${color.main};
+
+${({ theme }) => `
+  background-color: ${theme.color.sub};
+  color: ${theme.color.main};
+`}
 `
 
 export const SelectButton: FC<Props> = (props: Props) => {

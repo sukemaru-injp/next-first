@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { FC } from 'react'
 import { map } from 'lodash'
 import { mediaQuery } from '../../styles/mixin'
-import { color } from '../../styles/constants'
 interface Props {
   image: string
   title: string
@@ -28,7 +27,7 @@ border-radius: 5px;
 `
 
 const SubContent = styled.p`
-color: ${color.subText};
+color: ${({ theme }) => theme.color.subText};
 padding: 5px;
 overflow-wrap: break-word;
 `
@@ -51,7 +50,7 @@ padding: 10px 5px;
 `
 
 const Anchor = styled.a`
-color: ${color.main};
+color: ${({ theme }) => theme.color.main};
 `
 
 const WorkCard: FC<Props> = (props: Props) => {
