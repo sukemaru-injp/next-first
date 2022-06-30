@@ -6,7 +6,7 @@ interface Props extends ComponentProps<'button'> {
   title: string
 }
 
-const ButtonStyle = styled.button`
+export const ButtonStyle = styled.button`
 padding: 10px;
 height: 70px;
 width: 100px;
@@ -32,24 +32,7 @@ outline: none;
 }
 `
 
-const SelectButtonStyle = styled(ButtonStyle)`
-
-${({ theme }) => `
-  background-color: ${theme.color.sub};
-  color: ${theme.color.main};
-`}
-`
-
-export const SelectButton: FC<Props> = (props: Props) => {
-  return (
-    <SelectButtonStyle
-      onClick={props.onClick}>
-      <h2>{props.title}</h2>
-    </SelectButtonStyle>
-  )
-}
-
-export const Button: FC<Props> = (props: Props) => {
+const Button: FC<Props> = (props: Props) => {
   return (
     <ButtonStyle
       onClick={props.onClick}>
