@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { getYear } from 'date-fns'
 
 const Footer = styled.footer`
 width: 100%;
@@ -19,7 +20,7 @@ padding: 10px;
 const DefaultFooter = () => {
   return (
     <Footer>
-      <Content>© 2022 - sukemaru</Content>
+      <Content>&copy; {getYear(new Date())} - sukemaru</Content>
     </Footer>
   )
 }
