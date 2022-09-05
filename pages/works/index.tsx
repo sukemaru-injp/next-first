@@ -11,7 +11,8 @@ export interface workUi {
   image: string
   content: string[]
   link?: string
-  date?: string,
+  startDate?: string,
+  endDate?: string
   tech?: string
 }
 
@@ -58,7 +59,8 @@ const Works: NextPage<Props> = (props: Props) => {
                 content={item.content}
                 link={item?.link || ''}
                 tech={item?.tech || ''}
-                date={item?.date || ''} />
+                startDate={item?.startDate || ''}
+                endDate={item?.endDate || ''} />
             </CardWrapper> 
           })}
           <Accounts />

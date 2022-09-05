@@ -9,7 +9,8 @@ interface Props {
   title: string
   content: string[]
   link?: string
-  date?: string
+  startDate?: string
+  endDate?: string
   tech?: string
   imageHeight?: string
   imageWidth?: string
@@ -55,8 +56,11 @@ color: ${({ theme }) => theme.color.main};
 
 const WorkCard: FC<Props> = (props: Props) => {
   const DateText = () => {
-    if (props?.date) {
-      return <SubContent>{props.date}&ensp;〜</SubContent>
+    if (props.startDate && props.endDate) {
+      return <SubContent>{props.startDate}&ensp;〜&ensp;{props.endDate}</SubContent>
+    }
+    if (props?.startDate) {
+      return <SubContent>{props.startDate}&ensp;〜</SubContent>
     } else {
       return <></>
     }
