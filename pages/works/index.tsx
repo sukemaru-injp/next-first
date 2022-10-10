@@ -34,6 +34,7 @@ flex-flow: column;
 
 const CardWrapper = styled.div`
 margin: 40px 0;
+max-width: 90vw;
 `
 
 const Title = styled.h2`
@@ -43,7 +44,7 @@ text-align: center;
 font-size: 1.2rem;
 `
 
-const Works: NextPage<Props> = (props: Props) => {
+const Works: NextPage<Props> = ({ contents }: Props) => {
   return (
     <>
       <PageWrapper>
@@ -51,7 +52,7 @@ const Works: NextPage<Props> = (props: Props) => {
           My Works
         </Title>
         <ContentWrapper>
-          {map(props.contents, (item, idx) => {
+          {map(contents, (item, idx) => {
             return <CardWrapper key={`item${idx}`}>
               <WorkCard
                 title={item.title}

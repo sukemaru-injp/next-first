@@ -16,10 +16,7 @@ width: 280px;
 `)}
 `
 const LargeCardStyle = styled(CardStyle)`
-width: 800px;
-${mediaQuery('mobile', `
-width: 320px;
-`)}
+width: 100%;
 `
 
 export const Card: FC<Props> = ({ children }: Props) => {
