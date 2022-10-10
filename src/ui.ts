@@ -1,4 +1,4 @@
-import { format, differenceInYears } from 'date-fns'
+import { format } from 'date-fns'
 import { workUi } from '../pages/works'
 
 interface button {
@@ -6,9 +6,8 @@ interface button {
   to: string
 }
 
-const age = differenceInYears(new Date(), new Date(1997, 7, 21))
 export const contentInner = [
-  `Kubota Ryosukeと申します。1997年8月21日生まれ、${age}歳です。`,
+  'Kubota Ryosukeと申します。97年8月生まれ。',
   '旅行・サウナ・Typescriptが好きな人です。',
   'サブスクビジネス向け販売・請求管理SaaS開発において、フロントエンドエンジニアとして従事。',
   '主にReact/Typescriptを用いた開発を行っています。',
