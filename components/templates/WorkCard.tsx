@@ -20,13 +20,13 @@ padding: 5px;
 overflow-wrap: break-word;
 `
 const ImageWrapper = styled.div`
-& > span {
-border-radius: 5px;
-}
+width: '100%';
+height: '100%';
 `
 
 const ImageStyle = styled(Image)`
 object-fit: cover;
+border-radius: 5px;
 `
 
 const SubContent = styled.p`
