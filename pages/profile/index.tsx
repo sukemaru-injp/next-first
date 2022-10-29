@@ -36,9 +36,11 @@ const ImageWrapper = styled.div`
 position: relative;
 display: flex;
 justify-content: center;
+`
 
-& > span {
+const ImageStyle = styled(Image)`
   border-radius: 50%;
+  object-fit: cover;
   &::before {
     content: '';
     position: absolute;
@@ -50,7 +52,6 @@ justify-content: center;
     opacity: 0.2;
     z-index: 10;
   }
-}
 `
 interface Props {
   contents: string[]
@@ -62,13 +63,12 @@ const Profile: NextPage<Props> = (props: Props) => {
       <Wrapper>
         <ContentWrapper>
           <ImageWrapper>
-            <Image
+            <ImageStyle
               className="image"
               src="/img/profile.png"
               alt="profile"
               width={400}
-              height={400}
-              objectFit="cover" />
+              height={400} />
           </ImageWrapper>
         </ContentWrapper>
         <ContentWrapper>
