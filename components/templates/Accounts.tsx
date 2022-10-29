@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import GitHubIcon from '@mui/icons-material/GitHub'
-import FacebookIcon from '@mui/icons-material/Facebook'
+import { AiOutlineGithub, AiOutlineFacebook } from 'react-icons/ai'
 import { FC } from 'react'
+import Icon from '../atoms/Icon'
 
 const Wrapper = styled.div`
 padding: 20px 0;
@@ -41,11 +41,13 @@ const Accounts: FC<Props> = () => {
         <Title>Get&ensp;in&ensp;Touch</Title>
         <IconWrapper
           onClick={toGithub}>
-          <SubTitle>Github</SubTitle><GitHubIcon />
+          <SubTitle>Github</SubTitle>
+          <Icon><AiOutlineGithub /></Icon>
         </IconWrapper>
         <IconWrapper
           onClick={toFacebook}>
-          <SubTitle>FaceBook</SubTitle><FacebookIcon />
+          <SubTitle>FaceBook</SubTitle>
+          <Icon><AiOutlineFacebook /></Icon>
         </IconWrapper>
       </Wrapper>
     </>

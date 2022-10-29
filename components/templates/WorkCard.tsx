@@ -12,8 +12,6 @@ interface Props {
   startDate?: string
   endDate?: string
   tech?: string
-  imageHeight?: string
-  imageWidth?: string
 }
 
 const Content = styled.p`
@@ -25,6 +23,10 @@ const ImageWrapper = styled.div`
 & > span {
 border-radius: 5px;
 }
+`
+
+const ImageStyle = styled(Image)`
+object-fit: cover;
 `
 
 const SubContent = styled.p`
@@ -73,7 +75,7 @@ const WorkCard: FC<Props> = (props: Props) => {
     }
   }
 
-  const TechInfo = () => {
+  const TechInfo: FC = () => {
     if (props?.tech) {
       return <SubContent>使用技術:&ensp;{props.tech}</SubContent>
     }
@@ -86,12 +88,11 @@ const WorkCard: FC<Props> = (props: Props) => {
         title={props.title}>
         <InnerWrapper>
           <ImageWrapper>
-            <Image
+            <ImageStyle
               src={`${props.image}`}
               alt="profile"
-              width={props?.imageWidth || 480}
-              height={props?.imageHeight || 350}
-              objectFit="cover" />              
+              width={400}
+              height={350} />              
           </ImageWrapper>
           <ContentWrapper>
             <DateText />
