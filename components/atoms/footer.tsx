@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import { getYear } from 'date-fns'
+import { FC } from 'react'
+
+interface Props {}
 
 const FooterStyle = styled.footer`
 width: 100%;
@@ -17,7 +20,7 @@ font-size: 1.1rem;
 padding: 10px;
 `
 
-const Footer = () => {
+const Footer: FC<Props> = () => {
   return (
     <FooterStyle>
       <Content>&copy; {getYear(new Date())} - sukemaru</Content>
