@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Card } from '../atoms/card'
+import { Card } from '../atom/card'
 import { FC, ReactNode } from 'react'  
 
 const Title = styled.h2`

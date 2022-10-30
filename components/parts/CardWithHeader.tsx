@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
 import styled from 'styled-components'
-import { LargeCard } from '../atoms/card'
+import { LargeCard } from '../atom/card'
 interface Props {
   title: string
   children: ReactNode

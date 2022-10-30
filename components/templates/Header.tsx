@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import styled from 'styled-components'
 import { ROUTES } from '../../routes'
-import Button from '../atoms/Button'
+import Button from '../atom/Button'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 

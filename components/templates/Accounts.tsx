@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { AiOutlineGithub, AiOutlineFacebook } from 'react-icons/ai'
 import { FC } from 'react'
-import Icon from '../atoms/Icon'
+import Icon from '../atom/Icon'
 
 const Wrapper = styled.div`
 padding: 20px 0;
