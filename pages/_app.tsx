@@ -5,7 +5,7 @@ import { FC } from 'react'
 import Head from 'next/head'
 import PageWrapper from '../components/atoms/PageWrapper'
 import MainHeader from '../components/templates/MainHeader'
-import DefaultFooter from '../components/atoms/footer'
+import Footer from '../components/atoms/Footer'
 
 import { color } from '../styles/constants'
 
@@ -22,12 +22,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <AllHead />
-      <ThemeProvider theme={{ color }}>
+      <ThemeProvider theme={{ color: color() }}>
         <MainHeader />
         <PageWrapper>
           <Component {...pageProps} />
         </PageWrapper>
-        <DefaultFooter />
+        <Footer />
       </ThemeProvider>
     </>
   )

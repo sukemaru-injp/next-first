@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import WorkCard from '../../components/templates/WorkCard'
 import type { NextPage, GetStaticProps } from 'next'
 import { map, cloneDeep } from 'lodash'
-import { workDetails } from '../../src/ui'
+import { workDetails } from '../../utlis/ui'
 import Accounts from '../../components/templates/Accounts'
 import { fadeIn } from '../../styles/mixin'
 

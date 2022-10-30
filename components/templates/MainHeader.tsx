@@ -1,7 +1,7 @@
 import Buttons from '../parts/Buttons'
 import Header from '../atoms/header'
 import { VFC } from 'react'
-import { buttonUi } from '../../src/ui'
+import { buttonUi } from '../../utlis/ui'
 
 const MainHeader: VFC = () => {
   return (

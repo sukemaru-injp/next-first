@@ -1,4 +1,4 @@
-export const color = {
+export const color = () => ({
   main: '#008b8b',
   sub: '#ffaa00',
   error: '#ff2b00',
@@ -6,4 +6,4 @@ export const color = {
   text: '#fff',
   subText: '#808080',
   cardHeader: '#8fbc8f'
-}
+})

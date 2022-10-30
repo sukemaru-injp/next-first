@@ -1,7 +1,7 @@
 import type { NextPage, GetStaticProps } from 'next'
 import styled from 'styled-components'
 import Image from 'next/image'
-import { contentInner } from '../../src/ui'
+import { contentInner } from '../../utlis/ui'
 import Accounts from '../../components/templates/Accounts'
 import { mediaQuery, fadeIn } from '../../styles/mixin'
 import { cloneDeep } from 'lodash'

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { getYear } from 'date-fns'
 
-const Footer = styled.footer`
+const FooterStyle = styled.footer`
 width: 100%;
 height: 40px;
 text-align: center;
@@ -17,12 +17,12 @@ font-size: 1.1rem;
 padding: 10px;
 `
 
-const DefaultFooter = () => {
+const Footer = () => {
   return (
-    <Footer>
+    <FooterStyle>
       <Content>&copy; {getYear(new Date())} - sukemaru</Content>
-    </Footer>
+    </FooterStyle>
   )
 }
 
-export default DefaultFooter
+export default Footer
