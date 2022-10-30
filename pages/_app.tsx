@@ -3,10 +3,7 @@ import { ThemeProvider } from 'styled-components'
 import type { AppProps } from 'next/app'
 import { FC } from 'react'
 import Head from 'next/head'
-import PageWrapper from '../components/atoms/PageWrapper'
-import MainHeader from '../components/templates/MainHeader'
-import Footer from '../components/atoms/Footer'
-
+import Layout from '../components/Layout'
 import { color } from '../styles/constants'
 
 const AllHead: FC = () => {
@@ -23,11 +20,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <AllHead />
       <ThemeProvider theme={{ color: color() }}>
-        <MainHeader />
-        <PageWrapper>
+        <Layout>
           <Component {...pageProps} />
-        </PageWrapper>
-        <Footer />
+        </Layout>
       </ThemeProvider>
     </>
   )

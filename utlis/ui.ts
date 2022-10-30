@@ -1,11 +1,6 @@
 import { format } from 'date-fns'
 import { workUi } from '../pages/works'
 
-interface button {
-  title: string,
-  to: string
-}
-
 export const contentInner = [
   'Kubota Ryosukeと申します。97年8月生まれ。',
   '旅行・サウナ・Typescriptが好きな人です。',
@@ -13,21 +8,6 @@ export const contentInner = [
   '主にReact/Typescriptを用いた開発を行っています。',
   '国家公務員 → レンタルオフィス利用予約管理・経費管理Webサービス開発 → 現在',
   ''
-]
-
-export const buttonUi: button[] = [
-  {
-    title: 'Profile',
-    to: '/profile'
-  },
-  {
-    title: 'Skill',
-    to: '/skill'
-  },
-  {
-    title: 'Works',
-    to: '/works'
-  }
 ]
 
 export const workDetails: workUi[] = [

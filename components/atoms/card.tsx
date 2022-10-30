@@ -6,7 +6,7 @@ interface Props {
   children: ReactNode
 }
 
-const CardStyle = styled.div<Props>`
+const CardStyle = styled.div`
 box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
 background-color: #fff;
 width: 650px;
