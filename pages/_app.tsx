@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components'
 import type { AppProps } from 'next/app'
 import { FC } from 'react'
 import Head from 'next/head'
-import Layout from '../components/Layout'
+import Layout from '../app/Layout'
 import { color } from '../styles/constants'
 
 const AllHead: FC = () => {
