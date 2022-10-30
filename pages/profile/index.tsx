@@ -1,82 +1,46 @@
 import type { NextPage, GetStaticProps } from 'next'
 import styled from 'styled-components'
-import Image from 'next/image'
 import { contentInner } from '../../utlis/ui'
-import Accounts from '../../components/templates/Accounts'
-import { mediaQuery, fadeIn } from '../../styles/mixin'
+import { mediaQuery } from '../../styles/mixin'
 import { cloneDeep } from 'lodash'
+import Heading from '../../components/atom/Heading'
+import Space from '../../components/atom/Space'
+import Image from 'next/image'
+import Accounts from '../../components/templates/Accounts'
 
-const Wrapper = styled.div`
-display: flex;
-align-items: center;
-justify-content: space-around;
-padding: 40px 0;
-
-${mediaQuery('mobile', `
-flex-flow: column
-`)}
-`
-
-const Sentence = styled.p`
-line-height: 1.2;
-font-size: 1.2rem;
-`
-
-const ContentWrapper = styled.div`
-padding: 10px;
-animation-name: ${fadeIn};
-animation-duration: 1s;
-
-${mediaQuery('mobile', `
-padding: 20px 10px;
-`)}
-`
-
-const ImageWrapper = styled.div`
-position: relative;
-display: flex;
-justify-content: center;
-`
-
-const ImageStyle = styled(Image)`
-  border-radius: 50%;
-  object-fit: cover;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #000;
-    opacity: 0.2;
-    z-index: 10;
-  }
-`
 interface Props {
   contents: string[]
 }
 
-const Profile: NextPage<Props> = (props: Props) => {
+const Profile: NextPage<Props> = ({ contents }) => {
   return (
     <>
       <Wrapper>
-        <ContentWrapper>
-          <ImageWrapper>
+        <Heading size="large">Profile プロフィール</Heading>
+        <MainWrapper>
+          <Space size={['large', 'none']}>
+            <Heading size="middle" color="subText">Ryosuke Kubota</Heading>
+            <Ul>
+              {contents.map((val, i) => {
+                return (
+                  <Li key={`${i}`}>
+                    {val}
+                  </Li>
+                )
+              })}
+            </Ul>
+          </Space>
+
+          <Space size={['large', 'none']}>
             <ImageStyle
-              className="image"
               src="/img/profile.png"
               alt="profile"
-              width={400}
-              height={400} />
-          </ImageWrapper>
-        </ContentWrapper>
-        <ContentWrapper>
-          {props.contents.map((item, idx) => 
-            <Sentence key={`context${idx}`}>{item}</Sentence>
-          )}
-          <Accounts />
-        </ContentWrapper>
+              width={250}
+              height={250} />
+
+            <Accounts />
+          </Space>
+        </MainWrapper>
       </Wrapper>
     </>
   )
@@ -90,3 +54,43 @@ export const getStaticProps: GetStaticProps<Props> = () => {
 }
 
 export default Profile
+
+const Wrapper = styled.div`
+padding: 40px;
+
+${mediaQuery('mobile', `
+  padding: 20px;
+`)}
+`
+
+const Ul = styled.ul`
+padding: 10px;
+`
+
+const Li = styled.li`
+padding: 10px;
+color: ${({ theme }) => theme.color.subText};
+list-style-type: circle;
+`
+
+const MainWrapper = styled.div`
+display: flex;
+${mediaQuery('mobile', `
+flex-flow: column
+`)}
+`
+const ImageStyle = styled(Image)`
+  border-radius: 10px;
+  object-fit: cover;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.2;
+    z-index: 10;
+  }
+`

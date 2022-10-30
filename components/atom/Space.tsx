@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react'
 import styled from 'styled-components'
 
-type SizeType = 'small' | 'middle' | 'large'
+type SizeType = 'none' | 'small' | 'middle' | 'large'
 
 interface SpaceProps {
   size: SizeType | SizeType[]
@@ -23,10 +23,11 @@ const Div = styled.div<MarginProps>`
 `
 
 const spaceSize = {
+  none: 0,
   small: 8,
   middle: 16,
   large: 24,
-}
+} as const
 
 const getNumberSize = (size: SizeType) => {
   return typeof size === 'string' ? spaceSize[size] : size || 0

@@ -14,8 +14,6 @@ module.exports = {
       },
     ]
   },
-  experimental: {
-    scrollRestoration: true,
-  },
+  experimental:{ appDir: true },
   swcMinify: true
 }
