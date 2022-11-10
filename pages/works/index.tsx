@@ -5,6 +5,7 @@ import { map, cloneDeep } from 'lodash'
 import { workDetails } from '../../utlis/ui'
 import Accounts from '../../components/templates/Accounts'
 import { fadeIn } from '../../styles/mixin'
+import Heading from '../../components/atom/Heading'
 
 export interface workUi {
   title: string
@@ -21,7 +22,7 @@ interface Props {
 }
 
 const PageWrapper = styled.div`
-padding: 30px 0;
+padding: 40px;
 animation-name: ${fadeIn};
 animation-duration: 1s;
 `
@@ -37,20 +38,13 @@ margin: 40px 0;
 max-width: 90vw;
 `
 
-const Title = styled.h2`
-color: ${({ theme }) => theme.color.main};
-font-weight: bold;
-text-align: center;
-font-size: 1.2rem;
-`
-
 const Works: NextPage<Props> = ({ contents }: Props) => {
   return (
     <>
       <PageWrapper>
-        <Title>
+        <Heading>
           My Works
-        </Title>
+        </Heading>
         <ContentWrapper>
           {map(contents, (item, idx) => {
             return <CardWrapper key={`item${idx}`}>

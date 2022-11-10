@@ -1,14 +1,14 @@
 import { FC, ReactNode } from 'react'
 import styled from 'styled-components'
 
-type SizeType = 'none' | 'small' | 'middle' | 'large'
+export type SizeType = 'none' | 'small' | 'middle' | 'large'
 
-interface SpaceProps {
+export interface SpaceProps {
   size: SizeType | SizeType[]
   children: ReactNode
 }
 
-interface MarginProps {
+export interface MarginProps {
   top?: number,
   right?: number,
   bottom?: number,
@@ -33,7 +33,7 @@ const getNumberSize = (size: SizeType) => {
   return typeof size === 'string' ? spaceSize[size] : size || 0
 }
 
-const makeMarginProps = (size: SizeType | SizeType[]): MarginProps => {
+export const makeMarginProps = (size: SizeType | SizeType[]): MarginProps => {
   let lastVal: MarginProps = {
     top: 0,
     right: 0,

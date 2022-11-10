@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import CardWithTitle from '../parts/CardWithTitle'
-import { map } from 'lodash'
-import { mediaQuery, hover, fadeIn } from '../../styles/mixin'
-import { VFC } from 'react'
+import Card from '../atom/Cardv2'
+import { mediaQuery,fadeIn } from '../../styles/mixin'
+import { VFC, FC } from 'react'
 
 export interface Skill {
   title: string,
@@ -12,18 +11,68 @@ interface Props {
   uiData: Skill[]
 }
 
-const InnerWrapper = styled.div`
-padding: 20px;
-transition: all 0.2s;
+interface CardProps {
+  title: string,
+  sentence: string[]
+}
+
+const SkillCard: FC<CardProps> = ({ title, sentence }) => {
+  return (
+    <Card
+      marginSize={['middle', 'none']}
+      header={
+        <Title>
+          {title}
+        </Title>
+      }>
+      <ContentWrapper>
+        {sentence.map((item, idx) => {
+          return(
+            <Content key={`sentence${idx}`}>
+              { item } 
+            </Content>
+          )
+        })
+        }
+      </ContentWrapper>
+    </Card>
+  )
+}
+
+const SkillCards: VFC<Props> = (props: Props) => {
+  return (
+    <Wrapper>
+      {props.uiData.map((v: Skill, idx) => {
+        return (
+          <SkillCard
+            key={`skill${idx}`}
+            title={v.title}
+            sentence={v.sentence} />
+        )
+      })}
+    </Wrapper>
+  )
+}
+
+const Wrapper = styled.div`
+width: 80vw;
 animation-name: ${fadeIn};
 animation-duration: 1s;
 ${mediaQuery('mobile', `
-padding: 30px 20px;
-`)}
-${hover(`
-transform: scale(1.02);
+width: 90vw;
 `)}
 `
+
+const Title = styled.h2`
+font-weight: bold;
+font-size: 1.2rem;
+padding: 0 0 15px 0;
+
+${({ theme }) => `
+  color: ${theme.color.subText};
+`}
+`
+
 const Content = styled.p`
 line-height: 1.5;
 font-size: 1.1rem;
@@ -31,31 +80,5 @@ font-size: 1.1rem;
 const ContentWrapper = styled.div`
 padding: 20px 10px;
 `
-
-const SkillCards: VFC<Props> = (props: Props) => {
-  return (
-    <>
-      {map(props.uiData, (v: Skill, idx) => {
-        return (
-          <InnerWrapper key={`skill${idx}`}>
-            <CardWithTitle
-              title={v.title}>
-              <ContentWrapper>
-                {map(v.sentence, (item, idx) => {
-                  return(
-                    <Content key={`sentence${idx}`}>
-                      { item } 
-                    </Content>
-                  )
-                })
-                }
-              </ContentWrapper>
-            </CardWithTitle>
-          </InnerWrapper>
-        )
-      })}
-    </>
-  )
-}
 
 export default SkillCards
