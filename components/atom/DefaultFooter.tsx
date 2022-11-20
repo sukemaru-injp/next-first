@@ -1,17 +1,19 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { getYear } from 'date-fns'
 import { FC } from 'react'
 
 interface Props {}
 
 const FooterStyle = styled.footer`
-width: 100%;
-height: 40px;
-text-align: center;
-${({ theme }) => `
-  background-color: ${theme.color.sub};
-  color: ${theme.color.subText};
-  `}
+${({ theme }) => {
+    return css`
+      width: 100%;
+      height: 40px;
+      text-align: center;
+      background-color: ${theme.color.sub};
+      color: ${theme.color.subText};
+  `
+  }}
 `
 
 const Content = styled.p`
