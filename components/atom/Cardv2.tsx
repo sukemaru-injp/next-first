@@ -38,7 +38,7 @@ const CardStyle = styled.div<MarginProps>`
   ${({ top, right, bottom, left }) => {
     return css`
       background-color: #fff;
-      box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
+      box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
       padding: 20px;
       margin-top: ${top}px;
       margin-left: ${right}px;

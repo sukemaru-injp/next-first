@@ -5,8 +5,9 @@ import { mediaQuery } from '../../styles/mixin'
 import { cloneDeep } from 'lodash'
 import Heading from '../../components/atom/Heading'
 import Space from '../../components/atom/Space'
-import Image from 'next/image'
 import Accounts from '../../components/templates/Accounts'
+import { OriginalImage } from '../../components/atom/OriginalImage'
+import { Page } from '../../components/atom/Page'
 
 interface Props {
   contents: string[]
@@ -15,7 +16,7 @@ interface Props {
 const Profile: NextPage<Props> = ({ contents }) => {
   return (
     <>
-      <Wrapper>
+      <Page>
         <Heading size="large">Profile プロフィール</Heading>
         <MainWrapper>
           <Space size={['large', 'none']}>
@@ -32,16 +33,15 @@ const Profile: NextPage<Props> = ({ contents }) => {
           </Space>
 
           <Space size={['large', 'none']}>
-            <ImageStyle
+            <OriginalImage
               src="/img/profile.png"
               alt="profile"
               width={250}
               height={250} />
-
             <Accounts />
           </Space>
         </MainWrapper>
-      </Wrapper>
+      </Page>
     </>
   )
 }
@@ -54,14 +54,6 @@ export const getStaticProps: GetStaticProps<Props> = () => {
 }
 
 export default Profile
-
-const Wrapper = styled.div`
-padding: 40px;
-
-${mediaQuery('mobile', `
-  padding: 20px;
-`)}
-`
 
 const Ul = styled.ul`
 padding: 10px;
@@ -78,19 +70,4 @@ display: flex;
 ${mediaQuery('mobile', `
 flex-flow: column
 `)}
-`
-const ImageStyle = styled(Image)`
-  border-radius: 10px;
-  object-fit: cover;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #000;
-    opacity: 0.2;
-    z-index: 10;
-  }
 `

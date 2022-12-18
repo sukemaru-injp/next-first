@@ -1,12 +1,15 @@
 {
-  "extends": ["eslint:recommended", "next/core-web-vitals"],
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "plugin:react-hooks/recommended",
+  ],
   "rules": {
     "no-multiple-empty-lines": ["error", { "max": 1 }],
     "quotes": ["error", "single"],
     "no-var": ["error"],
     "no-multi-spaces": ["error"],
     "indent": ["error", 2],
-    "semi": ["error", "never"],
     "arrow-spacing": [
       "error",
       {

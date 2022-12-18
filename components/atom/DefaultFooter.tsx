@@ -8,10 +8,12 @@ const FooterStyle = styled.footer`
 ${({ theme }) => {
     return css`
       width: 100%;
-      height: 40px;
-      text-align: center;
+      height: 50px;
       background-color: ${theme.color.sub};
       color: ${theme.color.subText};
+      display: flex;
+      align-items: center;
+      justify-content: center;
   `
   }}
 `

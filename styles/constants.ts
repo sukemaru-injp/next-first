@@ -5,5 +5,4 @@ export const color = () => ({
   defaultBg: '#ffffe0',
   text: '#fff',
   subText: '#808080',
-  cardHeader: '#8fbc8f'
 })

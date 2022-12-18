@@ -4,7 +4,7 @@ import { color } from '../../styles/constants'
 
 type SizeType = 'small' | 'middle' | 'large'
 type Level = 1 | 2 | 3 | 4 | 5 | 6
-type ColorType = 'main' | 'subText'
+type ColorType = 'main' | 'sub' |'subText'
 
 interface Props {
   size?: SizeType

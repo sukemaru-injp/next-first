@@ -1,72 +1,63 @@
 import styled from 'styled-components'
-import WorkCard from '../../components/templates/WorkCard'
 import type { NextPage, GetStaticProps } from 'next'
-import { map, cloneDeep } from 'lodash'
-import { workDetails } from '../../utlis/ui'
+import { cloneDeep } from 'lodash'
+import { works, WorkDetail } from '../../utlis/ui'
 import Accounts from '../../components/templates/Accounts'
 import { fadeIn } from '../../styles/mixin'
+import DateRange from '../../components/parts/DateRange'
 import Heading from '../../components/atom/Heading'
-
-export interface workUi {
-  title: string
-  image: string
-  content: string[]
-  link?: string
-  startDate?: string,
-  endDate?: string
-  tech?: string
-}
+import WordCard from '../../components/parts/WorkCard'
+import { mediaQuery } from '../../styles/mixin'
+import { Page } from '../../components/atom/Page'
 
 interface Props {
-  contents: workUi[]
+  contents: WorkDetail[]
 }
 
-const PageWrapper = styled.div`
-padding: 40px;
-animation-name: ${fadeIn};
-animation-duration: 1s;
-`
-
-const ContentWrapper = styled.div`
+const Content = styled.div`
+margin: 30px 0;
 display: flex;
-align-items: center;
-flex-flow: column;
 `
 
-const CardWrapper = styled.div`
-margin: 40px 0;
-max-width: 90vw;
+const HistoryWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+
+  ${mediaQuery('mobile', `
+  flex-direction: column;
+  `)}
 `
 
-const Works: NextPage<Props> = ({ contents }: Props) => {
+const Works: NextPage<Props> = ({ contents }) => {
   return (
     <>
-      <PageWrapper>
-        <Heading>
-          My Works
+      <Page>
+        <Heading size="large">
+          Works
         </Heading>
-        <ContentWrapper>
-          {map(contents, (item, idx) => {
-            return <CardWrapper key={`item${idx}`}>
-              <WorkCard
-                title={item.title}
-                image={item.image}
-                content={item.content}
-                link={item?.link || ''}
-                tech={item?.tech || ''}
-                startDate={item?.startDate || ''}
-                endDate={item?.endDate || ''} />
-            </CardWrapper> 
-          })}
-          <Accounts />
-        </ContentWrapper>
-      </PageWrapper>
+        {contents.map((item, i) => {
+          return (
+            <Content key={`content${i}`}>
+              <HistoryWrapper>
+                <DateRange start={item.startDate} end={item.endDate} />
+
+                <WordCard
+                  name={item.name}
+                  description={item.description}
+                  imagePath={item.imagePath}
+                />
+              </HistoryWrapper>
+            </Content>
+          )
+        })}
+        <Accounts />
+      </Page>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps<Props> = () => {
-  const contents = cloneDeep(workDetails)
+  const contents = cloneDeep(works)
   return {
     props: { contents }
   }

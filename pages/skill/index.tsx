@@ -1,36 +1,22 @@
 import type { NextPage, GetStaticProps } from 'next'
-import styled from 'styled-components'
 import SkillCards, { Skill } from '../../components/templates/SkillCards'
 import Heading from '../../components/atom/Heading'
 import { map } from 'lodash'
 import { client } from '../../libs/client'
-import { mediaQuery } from '../../styles/mixin'
+import { Page } from '../../components/atom/Page'
 
 interface Props {
   skills: Skill[],
 }
 
-const PageWrapper = styled.div`
-padding: 40px;
-
-${mediaQuery('mobile', `
-  padding: 20px;
-`)}
-
-/* padding: 10px;
-display: flex;
-align-items: center;
-flex-flow: column; */
-`
-
 const SkillPage: NextPage<Props> = ({ skills }: Props) => {
   return (
     <>
-      <PageWrapper>
+      <Page>
         <Heading size="large">Skills</Heading>
         <SkillCards
           uiData={skills} />
-      </PageWrapper>
+      </Page>
     </>
   )
 }

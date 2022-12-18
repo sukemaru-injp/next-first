@@ -1,7 +1,8 @@
 import { FC, ReactNode } from 'react'
+import styled from 'styled-components'
 import Footer from '../components/atom/DefaultFooter'
-import PageWrapper from '../components/atom/PageWrapper'
 import Header from '../components/templates/Header'
+import { color } from '../styles/constants'
 interface Props {
   children: ReactNode
 }
@@ -9,12 +10,17 @@ const Layout: FC<Props> = ({ children }) => {
   return (
     <>
       <Header />
-      <PageWrapper>
+      <main style={{ minHeight: '100vh', backgroundColor: color().defaultBg }}>
         {children}
-      </PageWrapper>
+      </main>
       <Footer />
     </>
   )
 }
+
+const Page = styled.main`
+  width: 100%;
+  background-color: ${({ theme }) => theme.color.defaultBg};
+`
 
 export default Layout
