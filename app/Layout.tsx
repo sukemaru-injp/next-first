@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
 import styled from 'styled-components'
-import Footer from '../components/atom/DefaultFooter'
+import Footer from '../components/templates/DefaultFooter'
 import Header from '../components/templates/Header'
 import { color } from '../styles/constants'
 interface Props {
