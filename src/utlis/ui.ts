@@ -1,4 +1,4 @@
-export const contentInner = [
+export const profileInner = [
   '1997/08生まれ',
   'サブスクビジネス向け販売・請求管理SaaS開発において、フロントエンドエンジニアとして従事',
   'React / Typescriptを用いた開発を行っています',

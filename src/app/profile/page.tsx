@@ -7,7 +7,6 @@ const Home = async () => {
 
   return (
     <>
-      <h1>Home</h1>
       <ProfileCard imgDetail={contents.find((val) => val.label === 'top') ?? null} />
     </>
   );

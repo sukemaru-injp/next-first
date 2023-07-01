@@ -4,15 +4,15 @@ import { profileCardStyle } from './style.css';
 import { Accounts } from '../Accounts';
 import { ImageDetail } from '@/features/request';
 import Image from 'next/image';
+import { profileInner } from '@/utlis/ui';
 
 type Props = {
   imgDetail: ImageDetail | null;
 };
 export const ProfileCard: React.FC<Props> = ({ imgDetail }) => {
-  console.log(imgDetail);
   return (
     <div className={profileCardStyle.wrapper}>
-      <h3 className={profileCardStyle.head}>About Me</h3>
+      <h2 className={profileCardStyle.head}>About Me</h2>
 
       {imgDetail && (
         <div className={profileCardStyle.imgWrapper}>
@@ -25,6 +25,18 @@ export const ProfileCard: React.FC<Props> = ({ imgDetail }) => {
           />
         </div>
       )}
+
+      <div className={profileCardStyle.inner}>
+        <ul>
+          {profileInner.map((v, idx) => {
+            return (
+              <li key={idx} className={profileCardStyle.li}>
+                {v}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
       <Accounts />
     </div>
   );

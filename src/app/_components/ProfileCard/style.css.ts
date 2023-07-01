@@ -8,6 +8,14 @@ const wrapper = style({
   display: 'flex',
   flexDirection: 'column',
   gap: `${sizes.XS}`,
+  maxWidth: '70vw',
+  margin: '0 auto',
+
+  '@media': {
+    'screen and (max-width: 768px)': {
+      maxWidth: '90vw',
+    },
+  },
 });
 
 const head = style({
@@ -17,6 +25,9 @@ const head = style({
 const imgWrapper = style({
   maxHeight: '100%',
   maxWidth: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
 });
 
 const img = style({
@@ -24,9 +35,23 @@ const img = style({
   borderRadius: `${borderRadius.default}`,
 });
 
+const inner = style({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  color: `${color.subText}`,
+});
+
+const li = style({
+  listStyleType: 'circle',
+  lineHeight: '1.4rem',
+});
+
 export const profileCardStyle = {
   wrapper,
   head,
   imgWrapper,
   img,
+  inner,
+  li,
 } as const;
