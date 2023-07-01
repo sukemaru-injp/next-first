@@ -16,7 +16,7 @@ export const metadata = {
   // }
 };
 
-const Layout: FC<Props> = ({ children }) => {
+const RootLayout: FC<Props> = ({ children }) => {
   return (
     <html>
       <body>
@@ -30,4 +30,4 @@ const Layout: FC<Props> = ({ children }) => {
   );
 };
 
-export default Layout;
+export default RootLayout;
