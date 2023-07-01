@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { color } from '@/styles/constants';
+import { color } from '@/styles/foundation';
 
 export const headerStyle = style({
   display: 'flex',

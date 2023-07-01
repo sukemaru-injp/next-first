@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import React, { FC, ReactNode, Suspense } from 'react';
 import { Header } from './_components/Header';
 import { Footer } from './_components/Footer';
-import { color } from '@/styles/constants';
+import { color } from '@/styles/foundation';
 
 interface Props {
   children: ReactNode;
