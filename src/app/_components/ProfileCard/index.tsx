@@ -4,7 +4,7 @@ import { profileCardStyle } from './style.css';
 import { Accounts } from '../Accounts';
 import { ImageDetail } from '@/features/request';
 import Image from 'next/image';
-import { profileInner } from '@/utlis/ui';
+import { profileInner } from '@/utils/ui';
 
 type Props = {
   imgDetail: ImageDetail | null;

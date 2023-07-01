@@ -8,12 +8,12 @@ const wrapper = style({
   display: 'flex',
   flexDirection: 'column',
   gap: `${sizes.XS}`,
-  maxWidth: '70vw',
+  width: '70vw',
   margin: '0 auto',
 
   '@media': {
     'screen and (max-width: 768px)': {
-      maxWidth: '90vw',
+      width: '90vw',
     },
   },
 });

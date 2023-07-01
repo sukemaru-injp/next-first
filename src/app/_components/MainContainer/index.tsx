@@ -4,6 +4,7 @@ import { mainStyle } from './style.css'
 import { ImageDetail } from '@/features/request'
 import { MicroCMSContentId, MicroCMSDate } from 'microcms-js-sdk'
 import { ProfileCard } from '../ProfileCard';
+import { WorksCard } from '../WorksCard'
 
 type Props = {
   contents: (ImageDetail & MicroCMSContentId & MicroCMSDate)[]
@@ -17,6 +18,7 @@ export const MainContainer: React.FC<Props> = ({
   return (
     <div className={mainStyle.wrapper}>
       <ProfileCard imgDetail={imgDetail} />
+      <WorksCard />
     </div>
   )
 }
