@@ -8,4 +8,3 @@ URL: https://www.sukemaru.net/profile
 - microCMS
 - vanilla-extract
 - pnpm
-
