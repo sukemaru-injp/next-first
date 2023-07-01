@@ -4,4 +4,6 @@
 
 URL: https://www.sukemaru.net/profile
 
-SSG/microCMS/styled-components
+- next13 app router
+- microCMS
+- vanilla-extract
