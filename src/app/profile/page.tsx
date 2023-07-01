@@ -1,15 +1,16 @@
 import React from 'react';
-import { getProfile } from '@/features/request';
+import { getImages } from '@/features/request';
 import { ProfileCard } from '../_components/ProfileCard';
 
 const Home = async () => {
-  const res = await getProfile();
-  console.log(res);
+  const contents = await getImages();
+
   return (
     <>
       <h1>Home</h1>
-      <ProfileCard />
+      <ProfileCard imgDetail={contents.find((val) => val.label === 'top') ?? null} />
     </>
   );
 };
+
 export default Home;

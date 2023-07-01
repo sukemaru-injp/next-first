@@ -1,26 +1,26 @@
-import { style } from '@vanilla-extract/css'
-import { sizes, color } from '@/styles/foundation'
+import { style } from '@vanilla-extract/css';
+import { sizes, color } from '@/styles/foundation';
 
 const wrapper = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: `${sizes.XXS}`
-})
+  gap: `${sizes.XXS}`,
+});
 
 const text = style({
   color: `${color.subText}`,
-  fontWeight: 'bold'
-})
+  fontWeight: 'bold',
+});
 
 const iconWrapper = style({
   display: 'flex',
   gap: `${sizes.M}`,
   alignItems: 'center',
-  padding: `0 ${sizes.XS}`
-})
+  padding: `0 ${sizes.XS}`,
+});
 
 export const accountStyle = {
   wrapper,
   text,
   iconWrapper,
-} as const
+} as const;

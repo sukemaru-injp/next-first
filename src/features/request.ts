@@ -1,6 +1,6 @@
 import { client } from '@/libs/client';
 
-type ImageDetail = {
+export type ImageDetail = {
   label: string;
   image: {
     url: string;
@@ -9,7 +9,7 @@ type ImageDetail = {
   };
 };
 
-export const getProfile = async () => {
+export const getImages = async () => {
   const { contents } = await client.getList<ImageDetail>({ endpoint: 'profile' });
   return contents;
 };

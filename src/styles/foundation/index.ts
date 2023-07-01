@@ -15,3 +15,9 @@ export const color = {
   text: '#fff',
   subText: '#808080',
 } as const;
+
+export const borderRadius = {
+  default: '1.2rem',
+  little: '0.8rem',
+  min: '5px',
+} as const;

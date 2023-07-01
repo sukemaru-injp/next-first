@@ -2,7 +2,7 @@ import { ReactNode, MouseEvent, useMemo, forwardRef } from 'react';
 import { IconContext } from 'react-icons';
 
 import { iconWrapper } from './style.css';
-import { sizes, color } from '@/styles/foundation'
+import { sizes, color } from '@/styles/foundation';
 
 type SizeProps = 'small' | 'medium' | 'large' | 'xLarge';
 const sizeObj = {
