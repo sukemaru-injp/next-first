@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { accountStyle } from './style.css';
-import { FacebookIcon, GithubIcon, TwitterIcon } from '../Icons';
+import { FacebookIcon, GithubIcon, TwitterXIcon } from '../Icons';
 import { Icon } from '../Icon';
 
 const Github = () => {
@@ -27,7 +27,7 @@ const Facebook = () => {
 const Twitter = () => {
   return (
     <a target='_blank' rel='noopener noreferrer' href='https://twitter.com/Inakamon_0'>
-      <TwitterIcon />
+      <TwitterXIcon />
     </a>
   );
 };
