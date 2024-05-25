@@ -34,7 +34,10 @@ export const works: readonly WorkDetail[] = [
     name: 'Alp.inc',
     description: [
       'Scalebase - サブスクリプションビジネスにおける、契約管理・請求管理などを行うBtoB SaaS開発。',
-      '主にフロントエンドの開発に従事。',
+      'FE/時々BE開発してます。',
+      '',
+      '2024/05より、2023年立ち上げの請求書発行サービスScalebaseペイメントの開発に携わっている。',
+      'Next.js/Scala/PlayFrameworkでFE/BE開発してます。',
     ],
     link: 'https://scalebase.com/',
     startDate: new Date('2022-09-12'),
