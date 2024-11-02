@@ -5,7 +5,7 @@
     "plugin:react-hooks/recommended",
     "prettier"
   ],
-  "plugins": ["neverthrow"],
+  "plugins": [],
   "parser": "@typescript-eslint/parser",
   "rules": {
     "object-curly-spacing": ["error", "always"],

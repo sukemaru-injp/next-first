@@ -1,9 +1,9 @@
-import { style } from "@vanilla-extract/css";
-import { color, sizes } from "@/styles/foundation";
+import { style } from '@vanilla-extract/css';
+import { color, sizes } from '@/styles/foundation';
 
 const head = style({
   color: `${color.main}`,
-})
+});
 
 const wrapper = style({
   backgroundColor: `${color.text}`,
@@ -25,24 +25,24 @@ const wrapper = style({
 const inner = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: `${sizes.XS}`
-})
+  gap: `${sizes.XS}`,
+});
 
 const workInner = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: `${sizes.XXS}`
-})
+  gap: `${sizes.XXS}`,
+});
 
 const term = style({
-  color: `${color.subText}`
-})
+  color: `${color.subText}`,
+});
 
 const detailArea = style({
   display: 'flex',
   flexDirection: 'column',
-  color: `${color.subText}`
-})
+  color: `${color.subText}`,
+});
 
 export const workCardStyle = {
   head,
@@ -50,5 +50,5 @@ export const workCardStyle = {
   inner,
   workInner,
   term,
-  detailArea
-} as const
+  detailArea,
+} as const;
