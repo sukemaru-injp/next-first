@@ -1,12 +1,12 @@
 export const profileInner = [
   '1997/08 岡山 生まれ',
-  'サブスクビジネス向け販売・請求管理SaaS開発において、エンジニアとして従事',
-  'React / Typescriptが好き',
+  'サブスクビジネス向け販売・請求管理SaaS開発において、エンジニアとして従事中',
+  'React/Typescriptが好き, 関数型プログラミング的なアプローチが好き',
   '2016/04 ~ 国家公務員',
   '2021/07 ~ レンタルオフィス利用予約管理・経費管理Webサービス開発',
   '2022/09 ~ サブスクビジネス向け販売・請求管理SaaS開発',
   '好きなもの: ["サウナ", "旅行", "キャンプ"]',
-  'ﾜﾀｼﾃﾞｷﾙ: ["React", "TypeScript", "Next.js", "Scala", "PlayFramework"]',
+  'ﾜﾀｼﾃﾞｷﾙ: ["React", "TypeScript", "Next.js", "Scala", "PlayFramework", "SQL", "Git"]',
 ];
 
 export type WorkDetail = {
@@ -37,12 +37,22 @@ export const works: readonly WorkDetail[] = [
       'Scalebase - サブスクリプションビジネスにおける、契約管理・請求管理などを行うBtoB SaaS開発。',
       'FE/時々BE開発してます。',
       '',
-      '2024/05より、2023年立ち上げの請求書発行サービスScalebaseペイメントの開発に携わっている。',
+      '2024/05より、2023年立ち上げの請求書発行/債権管理サービスScalebaseペイメントの開発に携わっている。',
       'Next.js/Scala/PlayFrameworkでFE/BE開発してます。',
     ],
     link: 'https://scalebase.com/',
     startDate: new Date('2022-09-12'),
     endDate: null,
-    tech: ['React', 'Typescript', 'emotion', 'Scala'],
+    tech: ['React', 'Typescript', 'Scala', 'PlayFramework'],
+  },
+  {
+    name: 'TerraDrone株式会社(副業)',
+    description: [
+      '測量データのデータ管理・分析クラウドであるTerraCloudの開発に従事。主にUI/UXの改善を行う',
+    ],
+    link: 'https://terra-drone.net/',
+    startDate: new Date('2024-04-01'),
+    endDate: new Date('2024-06-30'),
+    tech: ['React', 'Typescript', 'Next.js'],
   },
 ];
