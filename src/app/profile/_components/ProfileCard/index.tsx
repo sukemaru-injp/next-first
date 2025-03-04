@@ -2,29 +2,27 @@
 import React from 'react';
 import { profileCardStyle } from './style.css';
 import { Accounts } from '../Accounts';
-import { ImageDetail } from '@/features/request';
 import Image from 'next/image';
 import { profileInner } from '@/utils/ui';
 
 type Props = {
-  imgDetail: ImageDetail | null;
+  url: string;
 };
-export const ProfileCard: React.FC<Props> = ({ imgDetail }) => {
+export const ProfileCard: React.FC<Props> = ({ url }) => {
   return (
     <div className={profileCardStyle.wrapper}>
       <h2 className={profileCardStyle.head}>About Me</h2>
 
-      {imgDetail && (
         <div className={profileCardStyle.imgWrapper}>
           <Image
             alt='top'
-            src={imgDetail.image.url}
+            src={url}
             width={250}
             height={250}
             className={profileCardStyle.img}
+            priority
           />
         </div>
-      )}
 
       <div className={profileCardStyle.inner}>
         <ul>

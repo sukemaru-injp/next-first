@@ -1,3 +1,4 @@
+
 import { client } from '@/libs/client';
 
 export type ImageDetail = {

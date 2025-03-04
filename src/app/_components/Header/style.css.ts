@@ -6,6 +6,6 @@ export const headerStyle = style({
   alignItems: 'center',
   padding: '0 4px',
   backgroundColor: color.main,
-  color: color.text,
+  color: color.sub,
   height: '60px',
 });

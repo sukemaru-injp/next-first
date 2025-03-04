@@ -6,6 +6,6 @@ export const footerStyle = style({
   alignItems: 'center',
   justifyContent: 'center',
   backgroundColor: color.sub,
-  color: color.text,
+  color: color.subText,
   height: '80px',
 });

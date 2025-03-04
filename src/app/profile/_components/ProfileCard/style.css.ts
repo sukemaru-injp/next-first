@@ -2,7 +2,6 @@ import { style } from '@vanilla-extract/css';
 import { color, sizes, borderRadius } from '@/styles/foundation';
 
 const wrapper = style({
-  backgroundColor: `${color.text}`,
   borderRadius: '5px',
   padding: `${sizes.M}`,
   display: 'flex',

@@ -6,7 +6,6 @@ const head = style({
 });
 
 const wrapper = style({
-  backgroundColor: `${color.text}`,
   borderRadius: '5px',
   padding: `${sizes.M}`,
   display: 'flex',
