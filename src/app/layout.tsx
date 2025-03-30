@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const metadata: Metadata = {
-  title: 'sukemaru|articles',
+  title: 'sukemaru | articles',
   description: 'sukemaru.net | By sukemaru',
   icons: {
     icon: '/favicon.ico',

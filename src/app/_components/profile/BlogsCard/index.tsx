@@ -37,7 +37,7 @@ const BlogSummary: FC<{ blog: Blog }> = ({ blog }) => {
           {blog.title}
         </a>
       ) : (
-        <Link href='#' className={blogsCardStyle.anchor}>
+        <Link href={`/blogs/${blog.id}`} className={blogsCardStyle.anchor}>
           {blog.title}
         </Link>
       )}

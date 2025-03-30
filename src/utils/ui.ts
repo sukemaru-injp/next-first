@@ -21,7 +21,6 @@ export const works: readonly WorkDetail[] = [
     name: '株式会社エイチ',
     description: [
       '叡知オフィスクラウド: コワーキングスペース・会議室の利用予約システム、経費精算までワンストップなシステム開発・自社内CS・セールスの利用する社内システム開発などの開発を経験。',
-      '2021年12月より新プロジェクト「叡知トリップ」の開発携わり、出張先の宿泊施設の利用予約システムのUI/UXの構築、開発を行う。',
     ],
     link: 'https://eichiii.com/office/',
     startDate: new Date('2021-07-01'),
