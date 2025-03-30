@@ -3,17 +3,18 @@ import React, { FC, ReactNode, Suspense } from 'react';
 import { Header } from './_components/Header';
 import { Footer } from './_components/Footer';
 import { color } from '@/styles/foundation';
+import { Metadata } from 'next';
 
 interface Props {
   children: ReactNode;
 }
 
-export const metadata = {
-  title: 'sukemaru-page',
+export const metadata: Metadata = {
+  title: 'sukemaru|articles',
   description: 'sukemaru.net | By sukemaru',
-  // icons: {
-  //   icon: '/mountain-favicon.png',
-  // }
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 const RootLayout: FC<Props> = ({ children }) => {

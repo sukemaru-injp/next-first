@@ -11,7 +11,7 @@ type Props = {
 export const MainContainer: React.FC<Props> = ({ contents }) => {
   return (
     <>
-      <ProfileCard url={contents.find((val) => val.label === 'top')?.image.url ?? ""} />
+      <ProfileCard url={contents.find((val) => val.label === 'top')?.image.url ?? ''} />
       <WorksCard />
     </>
   );

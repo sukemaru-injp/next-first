@@ -13,16 +13,16 @@ export const ProfileCard: React.FC<Props> = ({ url }) => {
     <div className={profileCardStyle.wrapper}>
       <h2 className={profileCardStyle.head}>About Me</h2>
 
-        <div className={profileCardStyle.imgWrapper}>
-          <Image
-            alt='top'
-            src={url}
-            width={250}
-            height={250}
-            className={profileCardStyle.img}
-            priority
-          />
-        </div>
+      <div className={profileCardStyle.imgWrapper}>
+        <Image
+          alt='top'
+          src={url}
+          width={250}
+          height={250}
+          className={profileCardStyle.img}
+          priority
+        />
+      </div>
 
       <div className={profileCardStyle.inner}>
         <ul>
