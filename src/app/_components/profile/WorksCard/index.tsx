@@ -10,9 +10,9 @@ type WorkProps = {
 const Work: React.FC<WorkProps> = ({ detail }) => {
   const term = useMemo(() => {
     if (detail.endDate instanceof Date) {
-      return `${format(detail.startDate, 'yyyy/MM/dd')} ~ ${format(detail.endDate, 'yyyy/MM/dd')}`;
+      return `${format(detail.startDate, 'yyyy-MM-dd')} ~ ${format(detail.endDate, 'yyyy-MM-dd')}`;
     }
-    return `${format(detail.startDate, 'yyyy/MM/dd')} ~ 現在`;
+    return `${format(detail.startDate, 'yyyy-MM-dd')} ~ 現在`;
   }, [detail]);
 
   return (
