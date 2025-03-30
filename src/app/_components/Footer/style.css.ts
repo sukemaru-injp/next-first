@@ -1,11 +1,12 @@
 import { style } from '@vanilla-extract/css';
-import { color } from '@/styles/foundation';
+import { color, sizes } from '@/styles/foundation';
 
 export const footerStyle = style({
   display: 'flex',
+  flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
   backgroundColor: color.sub,
   color: color.subText,
-  height: '80px',
+  padding: `${sizes.M} 0px`,
 });

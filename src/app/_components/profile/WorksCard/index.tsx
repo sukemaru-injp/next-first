@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { workCardStyle } from './style.css';
 import { WorkDetail, works } from '@/utils/ui';
 import { format } from 'date-fns';
+import { CardLayout } from '../CardLayout';
 
 type WorkProps = {
   detail: WorkDetail;
@@ -16,8 +17,10 @@ const Work: React.FC<WorkProps> = ({ detail }) => {
 
   return (
     <div className={workCardStyle.workInner}>
-      <h3>{detail.name}</h3>
-      <span className={workCardStyle.term}>{term}</span>
+      <div className={workCardStyle.titleWrapper}>
+        <h3>{detail.name}</h3>
+        <span className={workCardStyle.term}>({term})</span>
+      </div>
 
       <div className={workCardStyle.detailArea}>
         {detail.description.map((v, idx) => (
@@ -35,14 +38,12 @@ const Work: React.FC<WorkProps> = ({ detail }) => {
 
 export const WorksCard = () => {
   return (
-    <div className={workCardStyle.wrapper}>
-      <h2 className={workCardStyle.head}>Works</h2>
-
+    <CardLayout title='Career'>
       <div className={workCardStyle.inner}>
         {works.map((detail, idx) => {
           return <Work detail={detail} key={`${idx}`} />;
         })}
       </div>
-    </div>
+    </CardLayout>
   );
 };

@@ -1,18 +1,16 @@
 'use client';
 import React from 'react';
 import { profileCardStyle } from './style.css';
-import { Accounts } from '../Accounts';
 import Image from 'next/image';
 import { profileInner } from '@/utils/ui';
+import { CardLayout } from '../CardLayout';
 
 type Props = {
   url: string;
 };
 export const ProfileCard: React.FC<Props> = ({ url }) => {
   return (
-    <div className={profileCardStyle.wrapper}>
-      <h2 className={profileCardStyle.head}>About Me</h2>
-
+    <CardLayout title='About Me'>
       <div className={profileCardStyle.imgWrapper}>
         <Image
           alt='top'
@@ -35,7 +33,6 @@ export const ProfileCard: React.FC<Props> = ({ url }) => {
           })}
         </ul>
       </div>
-      <Accounts />
-    </div>
+    </CardLayout>
   );
 };

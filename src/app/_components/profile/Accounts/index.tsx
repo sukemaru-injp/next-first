@@ -34,16 +34,12 @@ const Twitter = () => {
 
 export const Accounts = () => {
   return (
-    <div className={accountStyle.wrapper}>
-      <p className={accountStyle.text}>Get in Touch</p>
+    <div className={accountStyle.iconWrapper}>
+      <Icon size='xLarge' icon={<Github />} />
 
-      <div className={accountStyle.iconWrapper}>
-        <Icon size='xLarge' icon={<Github />} />
+      <Icon size='xLarge' icon={<Facebook />} />
 
-        <Icon size='xLarge' icon={<Facebook />} />
-
-        <Icon size='xLarge' icon={<Twitter />} />
-      </div>
+      <Icon size='xLarge' icon={<Twitter />} />
     </div>
   );
 };

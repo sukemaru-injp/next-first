@@ -14,7 +14,6 @@ export type WorkDetail = {
   link: string | null;
   startDate: Date;
   endDate: Date | null;
-  tech: string[];
 };
 
 export const works: readonly WorkDetail[] = [
@@ -27,22 +26,18 @@ export const works: readonly WorkDetail[] = [
     link: 'https://eichiii.com/office/',
     startDate: new Date('2021-07-01'),
     endDate: new Date('2022-08-31'),
-    tech: ['Vue.js', 'Nuxt.js', 'Scss', 'Golang', 'Docker', 'GCP', 'Typescript'],
   },
-
   {
     name: 'Alp.inc',
     description: [
       'Scalebase - サブスクリプションビジネスにおける、契約管理・請求管理などを行うBtoB SaaS開発。',
-      'FE/時々BE開発してます。',
+      '2024/05より、2023年リリースの請求書/債権管理サービスScalebaseペイメントの開発に従事してます。',
       '',
-      '2024/05より、2023年立ち上げの請求書発行/債権管理サービスScalebaseペイメントの開発に携わっている。',
       'Next.js/Scala/PlayFrameworkでFE/BE開発してます。',
     ],
     link: 'https://scalebase.com/',
     startDate: new Date('2022-09-12'),
     endDate: null,
-    tech: ['React', 'Typescript', 'Scala', 'PlayFramework'],
   },
   {
     name: 'TerraDrone株式会社(副業)',
@@ -52,6 +47,5 @@ export const works: readonly WorkDetail[] = [
     link: 'https://terra-drone.net/',
     startDate: new Date('2024-04-01'),
     endDate: new Date('2024-06-30'),
-    tech: ['React', 'Typescript', 'Next.js'],
   },
 ];
