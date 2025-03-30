@@ -2,7 +2,7 @@
 
 ## Frontend Developer Sukemaru
 
-URL: https://www.sukemaru.net/profile
+URL: https://www.sukemaru.net
 
 - next13 app router
 - microCMS

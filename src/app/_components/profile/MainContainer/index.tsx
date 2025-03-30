@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageDetail } from '../../_api/getImages';
+import { ImageDetail } from '../../../_api/getImages';
 import { MicroCMSContentId, MicroCMSDate } from 'microcms-js-sdk';
 import { ProfileCard } from '../ProfileCard';
 import { WorksCard } from '../WorksCard';

@@ -15,15 +15,6 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production'
   },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/profile',
-        permanent: true,
-      },
-    ]
-  },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.microcms-assets.io' },
