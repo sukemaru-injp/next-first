@@ -1,13 +1,12 @@
-import React from 'react';
 import { getYear } from 'date-fns';
-import { footerStyle } from './style.css';
 import { Accounts } from '../profile/Accounts';
+import { footerStyle } from './style.css';
 
 export const Footer = () => {
-  return (
-    <footer className={footerStyle}>
-      <Accounts />
-      <p>&copy; {getYear(new Date())} - sukemaru</p>
-    </footer>
-  );
+	return (
+		<footer className={footerStyle}>
+			<Accounts />
+			<p>&copy; {getYear(new Date())} - sukemaru</p>
+		</footer>
+	);
 };

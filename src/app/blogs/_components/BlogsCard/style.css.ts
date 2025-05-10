@@ -2,27 +2,27 @@ import { color, sizes } from '@/styles/foundation';
 import { style } from '@vanilla-extract/css';
 
 const wrapper = style({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: sizes.XXS,
-  padding: '0',
+	display: 'flex',
+	flexDirection: 'column',
+	gap: sizes.XXS,
+	padding: '0'
 });
 
 const list = style({
-  listStyle: 'none',
+	listStyle: 'none'
 });
 
 const dateText = style({
-  color: color.subText,
+	color: color.subText
 });
 
 const anchor = style({
-  textDecoration: 'none',
+	textDecoration: 'none'
 });
 
 export const blogsCardStyle = {
-  wrapper,
-  list,
-  dateText,
-  anchor,
+	wrapper,
+	list,
+	dateText,
+	anchor
 };

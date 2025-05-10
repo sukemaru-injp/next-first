@@ -1,22 +1,22 @@
-import React from 'react';
-import { ImageDetail } from '../../../_api/getImages';
-import { MicroCMSContentId, MicroCMSDate } from 'microcms-js-sdk';
+import type { Blog } from '@/app/_types/Blog';
+import type { MicroCMSContentId, MicroCMSDate } from 'microcms-js-sdk';
+import type React from 'react';
+import type { ImageDetail } from '../../../_api/getImages';
 import { ProfileCard } from '../ProfileCard';
 import { WorksCard } from '../WorksCard';
-// import { BlogsCard } from '../BlogsCard';
-import { Blog } from '@/app/_types/Blog';
 
 type Props = {
-  contents: (ImageDetail & MicroCMSContentId & MicroCMSDate)[];
-  blogs: readonly Blog[];
+	contents: (ImageDetail & MicroCMSContentId & MicroCMSDate)[];
+	blogs: readonly Blog[];
 };
 
 export const MainContainer: React.FC<Props> = ({ contents }) => {
-  return (
-    <>
-      <ProfileCard url={contents.find((val) => val.label === 'top')?.image.url ?? ''} />
-      <WorksCard />
-      {/* <BlogsCard blogs={blogs} /> */}
-    </>
-  );
+	return (
+		<>
+			<ProfileCard
+				url={contents.find((val) => val.label === 'top')?.image.url ?? ''}
+			/>
+			<WorksCard />
+		</>
+	);
 };

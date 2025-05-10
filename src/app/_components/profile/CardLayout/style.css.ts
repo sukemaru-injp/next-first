@@ -1,27 +1,27 @@
-import { style } from '@vanilla-extract/css';
 import { color, sizes } from '@/styles/foundation';
+import { style } from '@vanilla-extract/css';
 
 const head = style({
-  color: `${color.main}`,
+	color: `${color.main}`
 });
 
 const wrapper = style({
-  borderRadius: '5px',
-  padding: `${sizes.M}`,
-  display: 'flex',
-  flexDirection: 'column',
-  gap: `${sizes.XS}`,
-  width: '70vw',
-  margin: '0 auto',
+	borderRadius: '5px',
+	padding: `${sizes.M}`,
+	display: 'flex',
+	flexDirection: 'column',
+	gap: `${sizes.XS}`,
+	width: '70vw',
+	margin: '0 auto',
 
-  '@media': {
-    'screen and (max-width: 768px)': {
-      width: '90vw',
-    },
-  },
+	'@media': {
+		'screen and (max-width: 768px)': {
+			width: '90vw'
+		}
+	}
 });
 
 export const cardLayoutStyle = {
-  head,
-  wrapper,
+	head,
+	wrapper
 } as const;
