@@ -9,7 +9,7 @@ export const Links = (): JSX.Element => {
 		<div className={wrapper}>
 			<div className={wrapper2}>
 				<Link href="/" className={link}>
-					Article
+					About
 				</Link>
 				<span className={span}>/</span>
 				<Link href="/blogs" className={link}>
