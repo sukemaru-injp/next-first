@@ -20,20 +20,19 @@ export const metadata: Metadata = {
 
 const RootLayout: FC<Props> = ({ children }) => {
 	return (
-		<>
-			<body>
+		<html lang="ja">
+			<body suppressHydrationWarning>
 				<Header />
-				<Suspense fallback={<p>Loading...</p>}>
-					<main
-						style={{ minHeight: '100vh', backgroundColor: color.defaultBg }}
-					>
+
+				<main style={{ minHeight: '100vh', backgroundColor: color.defaultBg }}>
+					<Suspense fallback={<p>Loading...</p>}>
 						<Links />
 						{children}
-					</main>
-				</Suspense>
+					</Suspense>
+				</main>
 				<Footer />
 			</body>
-		</>
+		</html>
 	);
 };
 

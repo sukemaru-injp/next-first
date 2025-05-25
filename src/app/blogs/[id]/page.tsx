@@ -1,5 +1,6 @@
 import type { JSX } from 'react';
 import { getBlogDetail } from './_api/getBlogDetail';
+import { Presenter } from './_components/Presenter';
 
 export default async function Page({
 	params
@@ -14,5 +15,5 @@ export default async function Page({
 		return <>Not Found</>;
 	}
 
-	return <div>blog:{res.title}</div>;
+	return <Presenter blog={res} />;
 }
