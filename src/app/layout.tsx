@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import { color } from '@/styles/foundation';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import { type FC, type ReactNode, Suspense } from 'react';
 import { Footer } from './_components/Footer';
@@ -32,6 +33,9 @@ const RootLayout: FC<Props> = ({ children }) => {
 				</main>
 				<Footer />
 			</body>
+			{process.env.NEXT_PUBLIC_GA_KEY && (
+				<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_KEY} />
+			)}
 		</html>
 	);
 };
