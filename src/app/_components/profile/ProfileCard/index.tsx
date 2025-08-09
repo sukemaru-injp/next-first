@@ -5,18 +5,15 @@ import type React from 'react';
 import { CardLayout } from '../CardLayout';
 import { profileCardStyle } from './style.css';
 
-type Props = {
-	url: string;
-};
-export const ProfileCard: React.FC<Props> = ({ url }) => {
+export const ProfileCard: React.FC = () => {
 	return (
 		<CardLayout title="About Me">
 			<div className={profileCardStyle.imgWrapper}>
 				<Image
 					alt="top"
-					src={url}
-					width={250}
-					height={250}
+					src={'/top-image.png'}
+					width={300}
+					height={300}
 					className={profileCardStyle.img}
 					priority
 				/>
