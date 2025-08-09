@@ -18,19 +18,17 @@ export type WorkDetail = {
 
 export const works: readonly WorkDetail[] = [
 	{
-		name: '株式会社エイチ',
-		description: [
-			'叡知オフィスクラウド: コワーキングスペース・会議室の利用予約システム、経費精算までワンストップなシステム開発・自社内CS・セールスの利用する社内システム開発などの開発を経験。'
-		],
-		link: 'https://eichiii.com/office/',
-		startDate: new Date('2021-07-01'),
-		endDate: new Date('2022-08-31')
+		name: 'Sapeet株式会社',
+		description: ['カルティ シセイカルテ/マルチカルテの開発に従事'],
+		link: 'https://sapeet.com/',
+		startDate: new Date('2025-06-01'),
+		endDate: null
 	},
 	{
-		name: 'Alp.inc',
+		name: 'Alp株式会社',
 		description: [
-			'Scalebase - サブスクリプションビジネスにおける、契約管理・請求管理などを行うBtoB SaaS開発。',
-			'2024/05より、2023年リリースの請求書/債権管理サービスScalebaseペイメントの開発に従事してます。',
+			'Scalebase:サブスクリプションビジネスにおける、契約管理・請求管理などを行うBtoB SaaS開発。',
+			'Scalebaseペイメント:2023年リリースの請求書/債権管理サービスの開発に従事',
 			'',
 			'Next.js/Scala/PlayFrameworkでFE/BE開発してます。'
 		],
@@ -46,5 +44,14 @@ export const works: readonly WorkDetail[] = [
 		link: 'https://terra-drone.net/',
 		startDate: new Date('2024-04-01'),
 		endDate: new Date('2024-06-30')
+	},
+	{
+		name: '株式会社エイチ',
+		description: [
+			'叡知オフィスクラウド: コワーキングスペース・会議室の利用予約システム、経費精算までワンストップなシステム開発・自社内CS・セールスの利用する社内システム開発などの開発を経験。'
+		],
+		link: 'https://eichiii.com/office/',
+		startDate: new Date('2021-07-01'),
+		endDate: new Date('2022-08-31')
 	}
 ];
