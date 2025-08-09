@@ -36,7 +36,7 @@ export const works: readonly WorkDetail[] = [
 		],
 		link: 'https://scalebase.com/',
 		startDate: new Date('2022-09-12'),
-		endDate: new Date('2025-08-31')
+		endDate: new Date('2025-05-31')
 	},
 	{
 		name: 'TerraDrone株式会社(副業)',
