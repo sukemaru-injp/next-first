@@ -1,9 +1,9 @@
-const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
+import type { NextConfig } from 'next';
+import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
 	reactStrictMode: true,
 	env: {
 		MICROCMS_API_KEY: process.env.MICROCMS_API_KEY,
@@ -16,7 +16,10 @@ const nextConfig = {
 		remotePatterns: [
 			{ protocol: 'https', hostname: 'images.microcms-assets.io' }
 		]
+	},
+	experimental: {
+		reactCompiler: true
 	}
 };
 
-module.exports = withVanillaExtract(nextConfig);
+export default withVanillaExtract(nextConfig);
