@@ -16,6 +16,19 @@ const dateText = style({
 	color: color.subText
 });
 
+const headerArea = style({
+	display: 'flex',
+	alignItems: 'center',
+	gap: sizes.XXS
+});
+
+const iconSpan = style({
+	height: '32px',
+	width: '32px',
+	maxHeight: '100%',
+	maxWidth: '100%'
+});
+
 const anchor = style({
 	textDecoration: 'none'
 });
@@ -24,5 +37,7 @@ export const blogsCardStyle = {
 	wrapper,
 	list,
 	dateText,
+	headerArea,
+	iconSpan,
 	anchor
 };

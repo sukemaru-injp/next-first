@@ -3,5 +3,5 @@ export type Blog = {
 	date: string;
 	title: string;
 	contents: string;
-	link?: string;
+	source?: string;
 };

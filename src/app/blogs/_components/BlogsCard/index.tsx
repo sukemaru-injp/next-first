@@ -1,4 +1,5 @@
 import type { Blog } from '@/app/_types/Blog';
+import { NoteIcon } from '@/utils/icons';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import { type FC, useMemo } from 'react';
@@ -27,12 +28,24 @@ const BlogSummary: FC<{ blog: Blog }> = ({ blog }) => {
 		[blog.date]
 	);
 
+	const displayIcon = useMemo(() => {
+		if (blog.source?.includes('note.com')) {
+			return <NoteIcon />;
+		}
+		return undefined;
+	}, [blog.source]);
+
 	return (
 		<li className={blogsCardStyle.list}>
-			<p className={blogsCardStyle.dateText}>{displayDate}</p>
-			{blog.link ? (
+			<div className={blogsCardStyle.headerArea}>
+				<p className={blogsCardStyle.dateText}>{displayDate}</p>
+				{displayIcon && (
+					<span className={blogsCardStyle.iconSpan}>{displayIcon}</span>
+				)}
+			</div>
+			{blog.source ? (
 				<a
-					href={blog.link}
+					href={blog.source}
 					target="_blank"
 					rel="noopener noreferrer"
 					className={blogsCardStyle.anchor}
